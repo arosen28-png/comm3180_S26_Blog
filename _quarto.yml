@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "My Data Stories"
+  title: "Alex Rosen's Data Stories"
   navbar:
     right:
       - about.qmd
@@ -10,7 +10,7 @@ website:
         href: https://github.com/
 format:
   html:
-    theme: cosmo
+    theme: cyborg
     css: styles.css
 
 execute:
