@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Data Stories – Alex Rosen’s Data Stories</title>
+<title>What Our Personalities Say About Us – Alex Rosen’s Data Stories</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c58a5418216061a8b0ce0e5845a41534.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-c58a5418216061a8b0ce0e5845a41534.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,77 +68,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Alex Rosen’s Data Stories</span>
     </a>
   </div>
@@ -151,7 +91,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -169,13 +109,13 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">My Data Stories</h1>
+    <div class="quarto-title column-body">
+      <h1 class="title">What Our Personalities Say About Us</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
       
     
@@ -183,131 +123,68 @@ window.Quarto = {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="ZGF0YSUyMHN0b3JpZXM=">data stories <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGVhcm5pbmc=">Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dmlzdWFsaXphdGlvbg==">visualization <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1773537924727" data-listing-reading-time-sort="3" data-listing-word-count-sort="457">
-<div class="thumbnail"><a href="./posts/002_blog/Untitled.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/002_blog/springbreak.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_blog/Untitled.html" class="no-external">Spring Break in Philly: Worth Staying or Not?</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/002_blog/Untitled.html" class="no-external">
-Every Spring Break, people in Philly ask the same question:<br>
-should I travel somewhere warm, or can I just stay here and hope for good weather?
-</a></div>
+<p>For this post, I explored several personality datasets to see what patterns might show up. The data includes a massive personality dataset with nearly 20,000 people, essays written by thousands of participants, MBTI personality types from social media posts, and even the personality scores from our own class.</p>
+<p>The goal was simple: see what the data might reveal about how people think, act, and express themselves.</p>
+<section id="looking-at-the-bigger-picture" class="level2">
+<h2 class="anchored" data-anchor-id="looking-at-the-bigger-picture">Looking at the Bigger Picture</h2>
+<p>The first dataset contains personality survey results from almost <strong>20,000 people</strong>. It measures the five major personality traits:</p>
+<ul>
+<li>Extraversion</li>
+<li>Neuroticism</li>
+<li>Agreeableness</li>
+<li>Conscientiousness</li>
+<li>Openness</li>
+</ul>
+<p>With such a large dataset, we can start to see what personality looks like across a broad group of people. Most people tend to fall somewhere in the middle on these traits. Very extreme personalities are actually pretty rare.</p>
+<p>This suggests that while personality differences exist, most people are not completely opposite from each other. Instead, personality tends to sit on a spectrum where people cluster near the center.</p>
+</section>
+<section id="how-does-our-class-compare" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-our-class-compare">How Does Our Class Compare?</h2>
+<p>One of the most interesting parts of the analysis was comparing the <strong>large personality dataset</strong> with the results from our own class.</p>
+<p>Our class dataset is much smaller, but it still shows a few interesting patterns. Some students scored very high in extraversion, while others scored much lower. The range of scores suggests that even in a relatively small group, personalities can vary a lot.</p>
+<p>Compared to the larger dataset, our class seems to have a fairly wide mix of personality types, which is probably what you would expect from a group of students with different backgrounds and interests.</p>
+</section>
+<section id="personality-and-writing" class="level2">
+<h2 class="anchored" data-anchor-id="personality-and-writing">Personality and Writing</h2>
+<p>Another dataset included <strong>over 2,000 personal essays</strong> written by people who also took personality tests.</p>
+<p>This dataset is interesting because it connects personality to how people write. For example, people who scored high in extraversion often wrote in a more energetic and social way, while people higher in neuroticism sometimes used more emotional language.</p>
+<p>It shows that personality can actually show up in subtle ways in the words people choose.</p>
+</section>
+<section id="personality-on-social-media" class="level2">
+<h2 class="anchored" data-anchor-id="personality-on-social-media">Personality on Social Media</h2>
+<p>The final dataset looked at <strong>MBTI personality types</strong> alongside thousands of social media posts.</p>
+<p>Unlike the Big Five, MBTI sorts people into specific personality categories like INTJ or ENFP. When looking at the posts, you can sometimes see differences in tone or topics depending on the personality type.</p>
+<p>For example, some personality types tend to write longer or more reflective posts, while others post more casually or socially.</p>
+</section>
+<section id="what-this-all-suggests" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-all-suggests">What This All Suggests</h2>
+<p>Looking across these datasets, one thing becomes clear: personality is complicated.</p>
+<p>No single test captures everything about a person. But when you look at personality from multiple angles — surveys, essays, and social media — interesting patterns start to appear.</p>
+<p>The data suggests that personality influences how people think, how they write, and even how they communicate online.</p>
+<p>At the same time, most people are not extremely different from each other. Instead, personality tends to exist on a spectrum where people share many traits but express them in slightly different ways.</p>
+<p>In the end, personality tests might not perfectly define who we are, but they can still reveal some surprising insights about human behavior.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="graph.png" class="img-fluid figure-img"></p>
+<figcaption>Personality Data Visualization</figcaption>
+</figure>
 </div>
-<div class="metadata">
-<a href="./posts/002_blog/Untitled.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1773537924738" data-listing-reading-time-sort="3" data-listing-word-count-sort="509">
-<div class="thumbnail"><a href="./posts/003_blog/Untitled.html" class="no-external">
 
-<p class="card-img-top"><img src="posts/003_blog/graph.png"  class="thumbnail-image card-img"/></p>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_blog/Untitled.html" class="no-external">What Our Personalities Say About Us</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/003_blog/Untitled.html" class="no-external">
-For this post, I explored several personality datasets to see what patterns might show up. The data includes a massive personality dataset with nearly 20,000 people, essays…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/003_blog/Untitled.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="dmlzdWFsaXphdGlvbiUyQ2RhdGElMjBzdG9yaWVz" data-listing-date-sort="1768176000000" data-listing-file-modified-sort="1773537924726" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="10">
-<div class="thumbnail"><a href="./posts/000_test_post/index.html" class="no-external">
+</section>
 
-<p class="card-img-top"><img src="posts/000_test_post/index_files/figure-html/cell-4-output-1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXphdGlvbg=='); return false;">visualization</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHN0b3JpZXM='); return false;">data stories</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/000_test_post/index.html" class="no-external">
-<p>An example post from a Jupyter notebook</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Jan 12, 2026
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="TExNcyUyQ0xlYXJuaW5n" data-listing-date-sort="1738368000000" data-listing-file-modified-sort="1773537924727" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="47">
-<div class="thumbnail"><a href="./posts/001_blog/medical_knowledge.ipynb.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/001_blog/image.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_blog/medical_knowledge.ipynb.html" class="no-external">Alex’s Test</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGVhcm5pbmc='); return false;">Learning</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/001_blog/medical_knowledge.ipynb.html" class="no-external">
-<p>Testing Blogging</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/001_blog/medical_knowledge.ipynb.html" class="no-external">
-<div class="listing-date">
-Feb 1, 2025
-</div>
-<div class="listing-author">
-Alex
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

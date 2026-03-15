@@ -7,25 +7,53 @@
     "text": "Alex Rosen’s Blog Posts"
   },
   {
-    "objectID": "posts/001_blog/medical_knowledge.ipynb.html",
-    "href": "posts/001_blog/medical_knowledge.ipynb.html",
-    "title": "Alex’s Test",
+    "objectID": "posts/003_blog/Untitled.html",
+    "href": "posts/003_blog/Untitled.html",
+    "title": "What Our Personalities Say About Us",
     "section": "",
-    "text": "Test post 🎉\nThis is a test blog post to confirm that my GitHub Pages site is correctly building and rendering content exported from a Jupyter notebook.\nWhat I’m testing\nFront matter is being read correctly (title/date/categories)\nMarkdown renders (headers, lists, bold text)\nAn image loads from my repo\n\n\n\nPhiladelphia skyline test image"
+    "text": "For this post, I explored several personality datasets to see what patterns might show up. The data includes a massive personality dataset with nearly 20,000 people, essays written by thousands of participants, MBTI personality types from social media posts, and even the personality scores from our own class.\nThe goal was simple: see what the data might reveal about how people think, act, and express themselves."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Data Stories",
-    "section": "",
-    "text": "Spring Break in Philly: Worth Staying or Not?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\n\n\n\n\n\n\n\nAlex’s Test\n\n\n\nLLMs\n\nLearning\n\n\n\nTesting Blogging\n\n\n\n\n\nFeb 1, 2025\n\n\nAlex\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/003_blog/Untitled.html#looking-at-the-bigger-picture",
+    "href": "posts/003_blog/Untitled.html#looking-at-the-bigger-picture",
+    "title": "What Our Personalities Say About Us",
+    "section": "Looking at the Bigger Picture",
+    "text": "Looking at the Bigger Picture\nThe first dataset contains personality survey results from almost 20,000 people. It measures the five major personality traits:\n\nExtraversion\nNeuroticism\nAgreeableness\nConscientiousness\nOpenness\n\nWith such a large dataset, we can start to see what personality looks like across a broad group of people. Most people tend to fall somewhere in the middle on these traits. Very extreme personalities are actually pretty rare.\nThis suggests that while personality differences exist, most people are not completely opposite from each other. Instead, personality tends to sit on a spectrum where people cluster near the center."
+  },
+  {
+    "objectID": "posts/003_blog/Untitled.html#how-does-our-class-compare",
+    "href": "posts/003_blog/Untitled.html#how-does-our-class-compare",
+    "title": "What Our Personalities Say About Us",
+    "section": "How Does Our Class Compare?",
+    "text": "How Does Our Class Compare?\nOne of the most interesting parts of the analysis was comparing the large personality dataset with the results from our own class.\nOur class dataset is much smaller, but it still shows a few interesting patterns. Some students scored very high in extraversion, while others scored much lower. The range of scores suggests that even in a relatively small group, personalities can vary a lot.\nCompared to the larger dataset, our class seems to have a fairly wide mix of personality types, which is probably what you would expect from a group of students with different backgrounds and interests."
+  },
+  {
+    "objectID": "posts/003_blog/Untitled.html#personality-and-writing",
+    "href": "posts/003_blog/Untitled.html#personality-and-writing",
+    "title": "What Our Personalities Say About Us",
+    "section": "Personality and Writing",
+    "text": "Personality and Writing\nAnother dataset included over 2,000 personal essays written by people who also took personality tests.\nThis dataset is interesting because it connects personality to how people write. For example, people who scored high in extraversion often wrote in a more energetic and social way, while people higher in neuroticism sometimes used more emotional language.\nIt shows that personality can actually show up in subtle ways in the words people choose."
+  },
+  {
+    "objectID": "posts/003_blog/Untitled.html#personality-on-social-media",
+    "href": "posts/003_blog/Untitled.html#personality-on-social-media",
+    "title": "What Our Personalities Say About Us",
+    "section": "Personality on Social Media",
+    "text": "Personality on Social Media\nThe final dataset looked at MBTI personality types alongside thousands of social media posts.\nUnlike the Big Five, MBTI sorts people into specific personality categories like INTJ or ENFP. When looking at the posts, you can sometimes see differences in tone or topics depending on the personality type.\nFor example, some personality types tend to write longer or more reflective posts, while others post more casually or socially."
+  },
+  {
+    "objectID": "posts/003_blog/Untitled.html#what-this-all-suggests",
+    "href": "posts/003_blog/Untitled.html#what-this-all-suggests",
+    "title": "What Our Personalities Say About Us",
+    "section": "What This All Suggests",
+    "text": "What This All Suggests\nLooking across these datasets, one thing becomes clear: personality is complicated.\nNo single test captures everything about a person. But when you look at personality from multiple angles — surveys, essays, and social media — interesting patterns start to appear.\nThe data suggests that personality influences how people think, how they write, and even how they communicate online.\nAt the same time, most people are not extremely different from each other. Instead, personality tends to exist on a spectrum where people share many traits but express them in slightly different ways.\nIn the end, personality tests might not perfectly define who we are, but they can still reveal some surprising insights about human behavior.\n\n\n\nPersonality Data Visualization"
   },
   {
     "objectID": "posts/002_blog/Untitled.html",
     "href": "posts/002_blog/Untitled.html",
     "title": "Spring Break in Philly: Worth Staying or Not?",
     "section": "",
-    "text": "Every Spring Break, people in Philly ask the same question:\nshould I travel somewhere warm, or can I just stay here and hope for good weather?\nPhilly likes to act like spring starts in March, but sometimes it still feels like winter. Other days feel surprisingly nice. I wanted to see what Spring Break weather in Philly is actually like, not just what it feels like in one random year.\nTo do this, I looked at daily weather data from Philadelphia from 2005 to 2025 and focused on the usual Spring Break window in mid-March.\n\n\nWhen people think of Spring Break, they imagine warm days and being outside. In Philly, that sometimes happens — but not always.\nLooking at the data, most Spring Break days fall somewhere in the middle. They’re usually not freezing, but they’re also not consistently warm. Some days reach the low or mid-60s, while others stay much cooler.\nBasically, Spring Break in Philly is unpredictable. You might get a really nice day that feels like spring, and then the next day feels like winter again.\n\n\n\nCold weather can usually be handled with a jacket, but rain is harder to deal with. Rain ruins plans and makes it harder to enjoy being outside.\nThe data shows that rain happens pretty often during Spring Break. Most years have at least one or two rainy days during that week. Snow is much less common, but it still happens occasionally, which is kind of shocking for March.\nThis means that even if the temperature isn’t terrible, the weather can still mess up your plans.\n\n\n\nOne of the biggest problems with Spring Break weather in Philly is how much it changes during the day.\nMany days have a large gap between the high and low temperatures. That means it might feel okay in the afternoon, but be really cold in the morning or at night.\nMarch weather doesn’t stay consistent, which makes it hard to plan outfits or activities. It’s the kind of weather where you leave the house dressed for one season and come back dressed for another.\n\n\n\nBased on the data, staying in Philly for Spring Break is a gamble.\nYou will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.\nIf you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.\nSpring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable."
+    "text": "Every Spring Break, people in Philly ask the same question:\nshould I travel somewhere warm, or can I just stay here and hope for good weather?\nPhilly likes to act like spring starts in March, but sometimes it still feels like winter. Other days feel surprisingly nice. I wanted to see what Spring Break weather in Philly is actually like, not just what it feels like in one random year.\nTo do this, I looked at daily weather data from Philadelphia from 2005 to 2025 and focused on the usual Spring Break window in mid-March.\n\n\nWhen people think of Spring Break, they imagine warm days and being outside. In Philly, that sometimes happens — but not always.\nLooking at the data, most Spring Break days fall somewhere in the middle. They’re usually not freezing, but they’re also not consistently warm. Some days reach the low or mid-60s, while others stay much cooler.\nBasically, Spring Break in Philly is unpredictable. You might get a really nice day that feels like spring, and then the next day feels like winter again.\n\n\n\nCold weather can usually be handled with a jacket, but rain is harder to deal with. Rain ruins plans and makes it harder to enjoy being outside.\nThe data shows that rain happens pretty often during Spring Break. Most years have at least one or two rainy days during that week. Snow is much less common, but it still happens occasionally, which is kind of shocking for March.\nThis means that even if the temperature isn’t terrible, the weather can still mess up your plans.\n\n\n\nOne of the biggest problems with Spring Break weather in Philly is how much it changes during the day.\nMany days have a large gap between the high and low temperatures. That means it might feel okay in the afternoon, but be really cold in the morning or at night.\nMarch weather doesn’t stay consistent, which makes it hard to plan outfits or activities. It’s the kind of weather where you leave the house dressed for one season and come back dressed for another.\n\n\n\nBased on the data, staying in Philly for Spring Break is a gamble.\nYou will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.\nIf you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.\nSpring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable.\n\n\n\nSpring Break Weather in Philadelphia"
   },
   {
     "objectID": "posts/002_blog/Untitled.html#what-spring-break-usually-feels-like",
@@ -53,7 +81,21 @@
     "href": "posts/002_blog/Untitled.html#so-should-you-stay-in-philly-for-spring-break",
     "title": "Spring Break in Philly: Worth Staying or Not?",
     "section": "",
-    "text": "Based on the data, staying in Philly for Spring Break is a gamble.\nYou will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.\nIf you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.\nSpring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable."
+    "text": "Based on the data, staying in Philly for Spring Break is a gamble.\nYou will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.\nIf you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.\nSpring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable.\n\n\n\nSpring Break Weather in Philadelphia"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Data Stories",
+    "section": "",
+    "text": "Spring Break in Philly: Worth Staying or Not?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat Our Personalities Say About Us\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\n\n\n\n\n\n\n\nAlex’s Test\n\n\n\nLLMs\n\nLearning\n\n\n\nTesting Blogging\n\n\n\n\n\nFeb 1, 2025\n\n\nAlex\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/001_blog/medical_knowledge.ipynb.html",
+    "href": "posts/001_blog/medical_knowledge.ipynb.html",
+    "title": "Alex’s Test",
+    "section": "",
+    "text": "Test post 🎉\nThis is a test blog post to confirm that my GitHub Pages site is correctly building and rendering content exported from a Jupyter notebook.\nWhat I’m testing\nFront matter is being read correctly (title/date/categories)\nMarkdown renders (headers, lists, bold text)\nAn image loads from my repo\n\n\n\nPhiladelphia skyline test image"
   },
   {
     "objectID": "posts/000_test_post/index.html",
