@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alex">
-<meta name="dcterms.date" content="2025-02-13">
-<meta name="description" content="A data story about personality surveys, essays, social media posts, and what they suggest about human behavior.">
+<meta name="dcterms.date" content="2025-02-18">
+<meta name="description" content="A data story about Winter Olympic medals, population, and why smaller cold countries often outperform larger ones.">
 
-<title>What Our Personalities Say About Us – Alex Rosen’s Data Stories</title>
+<title>Why Do Tiny Cold Countries Win So Many Winter Olympic Medals? – Alex Rosen’s Data Stories</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -113,16 +148,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">What Our Personalities Say About Us</h1>
+      <h1 class="title">Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?</h1>
                   <div>
         <div class="description">
-          A data story about personality surveys, essays, social media posts, and what they suggest about human behavior.
+          A data story about Winter Olympic medals, population, and why smaller cold countries often outperform larger ones.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">personality</div>
+                <div class="quarto-category">sports</div>
+                <div class="quarto-category">olympics</div>
                 <div class="quarto-category">data</div>
-                <div class="quarto-category">psychology</div>
               </div>
                   </div>
   </div>
@@ -140,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 13, 2025</p>
+        <p class="date">February 18, 2025</p>
       </div>
     </div>
     
@@ -159,52 +194,146 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="what-our-personalities-say-about-us" class="level1">
-<h1>What Our Personalities Say About Us</h1>
-<p>For this post, I explored several personality datasets to see what patterns might show up. The data includes a massive personality dataset with nearly 20,000 people, essays written by thousands of participants, MBTI personality types from social media posts, and even the personality scores from our own class.</p>
-<p>The goal was simple: see what the data might reveal about how people think, act, and express themselves.</p>
-<section id="looking-at-the-bigger-picture" class="level2">
-<h2 class="anchored" data-anchor-id="looking-at-the-bigger-picture">Looking at the Bigger Picture</h2>
-<p>The first dataset contains personality survey results from almost <strong>20,000 people</strong>. It measures the five major personality traits:</p>
-<ul>
-<li>Extraversion</li>
-<li>Neuroticism</li>
-<li>Agreeableness</li>
-<li>Conscientiousness</li>
-<li>Openness</li>
-</ul>
-<p>With such a large dataset, we can start to see what personality looks like across a broad group of people. Most people tend to fall somewhere in the middle on these traits. Very extreme personalities are actually pretty rare.</p>
-<p>This suggests that while personality differences exist, most people are not completely opposite from each other. Instead, personality tends to sit on a spectrum where people cluster near the center.</p>
+<section id="why-do-tiny-cold-countries-win-so-many-winter-olympic-medals" class="level1">
+<h1>Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?</h1>
+<p>When people think about the Winter Olympics, they usually imagine big countries like the United States or Canada winning the most medals. And in total numbers, that is often true.</p>
+<p>But total medals do not tell the whole story.</p>
+<p>A country with a huge population has way more people to choose from, so it makes sense that it might win more medals overall. That made me wonder: what happens if we compare Winter Olympic success to population size?</p>
+<p>To answer that, I looked at Winter Olympic medal data, country population data, and athlete bio data. What I found was more interesting than I expected.</p>
+<div id="cfe48794-5732-4929-a6ca-890fcf2f168c" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>medals <span class="op">=</span> pd.read_csv(<span class="st">"winter_olympics_medals.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> pd.read_csv(<span class="st">"populations.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>winter_medals <span class="op">=</span> medals[medals[<span class="st">"medal"</span>].notna()].copy()</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>medal_counts <span class="op">=</span> winter_medals.groupby(<span class="st">"noc"</span>).size().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>top10_total <span class="op">=</span> medal_counts.head(<span class="dv">10</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>top10_total.plot(kind<span class="op">=</span><span class="st">"bar"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Top 10 Countries by Total Winter Olympic Medals"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Total Medals"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Country Code"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="total-medals-tell-one-story" class="level2">
+<h2 class="anchored" data-anchor-id="total-medals-tell-one-story">Total Medals Tell One Story</h2>
+<p>If you just count medals, countries like the United States, Canada, Germany, and Norway rise to the top. That makes sense. These countries have large sports systems, long Olympic histories, and lots of resources.</p>
+<p>At first, it looks like the story is simple: the biggest and strongest countries win the most.</p>
+<div id="efc7e5bb-f004-43cd-8292-2e8739c3b42d" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use 2023 population as the closest recent comparison</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pop_2023 <span class="op">=</span> pop[[<span class="st">"Country Code"</span>, <span class="st">"2023"</span>]].copy()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pop_2023.columns <span class="op">=</span> [<span class="st">"noc"</span>, <span class="st">"population"</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>country_map <span class="op">=</span> {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"USA"</span>: <span class="st">"USA"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CAN"</span>: <span class="st">"CAN"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"NOR"</span>: <span class="st">"NOR"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SWE"</span>: <span class="st">"SWE"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FIN"</span>: <span class="st">"FIN"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"GER"</span>: <span class="st">"DEU"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FRA"</span>: <span class="st">"FRA"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ITA"</span>: <span class="st">"ITA"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SUI"</span>: <span class="st">"CHE"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"AUT"</span>: <span class="st">"AUT"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"NED"</span>: <span class="st">"NLD"</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>medal_df <span class="op">=</span> medal_counts.reset_index()</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>medal_df.columns <span class="op">=</span> [<span class="st">"noc"</span>, <span class="st">"medals"</span>]</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>medal_df[<span class="st">"pop_code"</span>] <span class="op">=</span> medal_df[<span class="st">"noc"</span>].<span class="bu">map</span>(country_map)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> medal_df.merge(pop_2023, left_on<span class="op">=</span><span class="st">"pop_code"</span>, right_on<span class="op">=</span><span class="st">"noc"</span>, how<span class="op">=</span><span class="st">"left"</span>, suffixes<span class="op">=</span>(<span class="st">"_medal"</span>, <span class="st">"_pop"</span>))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>merged[<span class="st">"medals_per_million"</span>] <span class="op">=</span> merged[<span class="st">"medals"</span>] <span class="op">/</span> (merged[<span class="st">"population"</span>] <span class="op">/</span> <span class="dv">1_000_000</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>per_million <span class="op">=</span> merged.dropna(subset<span class="op">=</span>[<span class="st">"medals_per_million"</span>]).sort_values(<span class="st">"medals_per_million"</span>, ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.bar(per_million[<span class="st">"noc_medal"</span>], per_million[<span class="st">"medals_per_million"</span>])</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Top Countries by Winter Olympic Medals Per Million People"</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Medals Per Million People"</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Country Code"</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="how-does-our-class-compare" class="level2">
-<h2 class="anchored" data-anchor-id="how-does-our-class-compare">How Does Our Class Compare?</h2>
-<p>One of the most interesting parts of the analysis was comparing the <strong>large personality dataset</strong> with the results from our own class.</p>
-<p>Our class dataset is much smaller, but it still shows a few interesting patterns. Some students scored very high in extraversion, while others scored much lower. The range of scores suggests that even in a relatively small group, personalities can vary a lot.</p>
-<p>Compared to the larger dataset, our class seems to have a fairly wide mix of personality types, which is probably what you would expect from a group of students with different backgrounds and interests.</p>
+<section id="population-changes-the-story" class="level2">
+<h2 class="anchored" data-anchor-id="population-changes-the-story">Population Changes the Story</h2>
+<p>Once population is added, the ranking changes a lot.</p>
+<p>Big countries still do well, but smaller countries start to look much more impressive. A country with a small population that wins a lot of medals is doing something special.</p>
+<p>This is where countries like Norway, Finland, and Sweden really stand out. They may not always have the biggest populations, but they consistently produce amazing results in winter sports.</p>
+<div id="5b87ec6b-501e-41cd-bfb5-afba4c7823cc" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>focus <span class="op">=</span> merged[merged[<span class="st">"noc_medal"</span>].isin([<span class="st">"USA"</span>, <span class="st">"CAN"</span>, <span class="st">"NOR"</span>, <span class="st">"SWE"</span>, <span class="st">"FIN"</span>])].copy()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>focus <span class="op">=</span> focus.sort_values(<span class="st">"medals_per_million"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.bar(focus[<span class="st">"noc_medal"</span>], focus[<span class="st">"medals_per_million"</span>])</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Winter Olympic Medals Per Million: USA vs Canada vs Nordic Countries"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Medals Per Million People"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Country Code"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="4d89943e-cfd9-4e0a-97db-7f5389d66d9a" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>bios <span class="op">=</span> pd.read_csv(<span class="st">"bios.csv"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>athletes_by_country <span class="op">=</span> bios[<span class="st">"NOC"</span>].value_counts().head(<span class="dv">10</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>athletes_by_country.plot(kind<span class="op">=</span><span class="st">"bar"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Countries With the Most Athletes in the Bio Dataset"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Number of Athletes"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Country"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="personality-and-writing" class="level2">
-<h2 class="anchored" data-anchor-id="personality-and-writing">Personality and Writing</h2>
-<p>Another dataset included <strong>over 2,000 personal essays</strong> written by people who also took personality tests.</p>
-<p>This dataset is interesting because it connects personality to how people write. For example, people who scored high in extraversion often wrote in a more energetic and social way, while people higher in neuroticism sometimes used more emotional language.</p>
-<p>It shows that personality can actually show up in subtle ways in the words people choose.</p>
+<section id="athletes-matter-too" class="level2">
+<h2 class="anchored" data-anchor-id="athletes-matter-too">Athletes Matter Too</h2>
+<p>Another way to think about this is by looking at how many athletes come from each country. Bigger countries often send more athletes, which gives them more chances to win medals.</p>
+<p>But even then, some countries still perform above expectations. That makes the story more interesting. It is not just about sending the most people. It is about building a system where winter sports are part of national identity.</p>
 </section>
-<section id="personality-on-social-media" class="level2">
-<h2 class="anchored" data-anchor-id="personality-on-social-media">Personality on Social Media</h2>
-<p>The final dataset looked at <strong>MBTI personality types</strong> alongside thousands of social media posts.</p>
-<p>Unlike the Big Five, MBTI sorts people into specific personality categories like INTJ or ENFP. When looking at the posts, you can sometimes see differences in tone or topics depending on the personality type.</p>
-<p>For example, some personality types tend to write longer or more reflective posts, while others post more casually or socially.</p>
-</section>
-<section id="what-this-all-suggests" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-all-suggests">What This All Suggests</h2>
-<p>Looking across these datasets, one thing becomes clear: personality is complicated.</p>
-<p>No single test captures everything about a person. But when you look at personality from multiple angles — surveys, essays, and social media — interesting patterns start to appear.</p>
-<p>The data suggests that personality influences how people think, how they write, and even how they communicate online.</p>
-<p>At the same time, most people are not extremely different from each other. Instead, personality tends to exist on a spectrum where people share many traits but express them in slightly different ways.</p>
-<p>In the end, personality tests might not perfectly define who we are, but they can still reveal some surprising insights about human behavior.</p>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>At first, Winter Olympic success looks like a story about powerful countries winning the most medals. But once population is added, the story becomes much more interesting.</p>
+<p>The countries that really stand out are not always the biggest ones. Smaller, colder countries often do the most with the least. Norway is the clearest example of this.</p>
+<p>So the next time I watch the Winter Olympics, I probably will not be most impressed by whichever country wins the most medals overall. I will be paying more attention to which countries do the most with the fewest people.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="graph.png" class="img-fluid figure-img"></p>
-<figcaption>Personality Data Visualization</figcaption>
+<p><img src="olympics.png" class="img-fluid figure-img"></p>
+<figcaption>Winter Olympics image</figcaption>
 </figure>
 </div>
 
