@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Alex Rosen’s Blog Posts"
-  },
-  {
     "objectID": "posts/003_blog/Untitled.html",
     "href": "posts/003_blog/Untitled.html",
     "title": "What Our Personalities Say About Us",
@@ -84,11 +77,130 @@
     "text": "Based on the data, staying in Philly for Spring Break is a gamble.\nYou will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.\nIf you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.\nSpring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable.\n\n\n\nSpring Break Weather in Philadelphia"
   },
   {
+    "objectID": "posts/005_blog/Untitled.html",
+    "href": "posts/005_blog/Untitled.html",
+    "title": "Fewer Crashes, Deadlier Streets",
+    "section": "",
+    "text": "Philadelphia crash image"
+  },
+  {
+    "objectID": "posts/005_blog/Untitled.html#the-first-story-crash-totals-really-did-fall",
+    "href": "posts/005_blog/Untitled.html#the-first-story-crash-totals-really-did-fall",
+    "title": "Fewer Crashes, Deadlier Streets",
+    "section": "The First Story: Crash Totals Really Did Fall",
+    "text": "The First Story: Crash Totals Really Did Fall\nAt first glance, the graph looks like good news. Philadelphia had more reported crashes in the mid-2000s, and that number generally moved down over time.\nIf you stopped there, the story would be simple: fewer crashes must mean safer streets.\nBut crash totals only tell one part of the story. A city can have fewer crashes overall and still have a serious safety problem if the crashes that do happen are more severe.\n\nannual[\"fatalities\"] = philly.groupby(\"CRASH_YEAR\")[\"FATAL_COUNT\"].sum()\nannual[\"fatal_per_1000_crashes\"] = annual[\"fatalities\"] / annual[\"crashes\"] * 1000\n\nfig, ax1 = plt.subplots(figsize=(10,5))\n\nax1.plot(annual.index, annual[\"fatalities\"])\nax1.set_xlabel(\"Year\")\nax1.set_ylabel(\"Traffic deaths\")\n\nax2 = ax1.twinx()\nax2.plot(annual.index, annual[\"fatal_per_1000_crashes\"])\nax2.set_ylabel(\"Deaths per 1,000 crashes\")\n\nplt.title(\"Traffic Deaths and Death Risk per 1,000 Crashes\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/005_blog/Untitled.html#the-twist-lower-crash-counts-do-not-automatically-mean-safer-roads",
+    "href": "posts/005_blog/Untitled.html#the-twist-lower-crash-counts-do-not-automatically-mean-safer-roads",
+    "title": "Fewer Crashes, Deadlier Streets",
+    "section": "The Twist: Lower Crash Counts Do Not Automatically Mean Safer Roads",
+    "text": "The Twist: Lower Crash Counts Do Not Automatically Mean Safer Roads\nThis second graph changes the story.\nEven when total crashes go down, traffic deaths do not always fall at the same pace. In some years, the number of deaths stays stubbornly high. The death rate per 1,000 crashes also shows that the crashes that remain can be more serious.\nThat is what makes this data interesting. It is possible for Philly to look better on one measure while still looking troubling on another.\n\nzip_shapes = gpd.read_file(\"philadelphia_zip_boundaries.geojson\")\n\nphilly_map = philly[\n    philly[\"DEC_LONGITUDE\"].between(-75.35, -74.9) &\n    philly[\"DEC_LATITUDE\"].between(39.8, 40.2)\n].copy()\n\ngeo = gpd.GeoDataFrame(\n    philly_map,\n    geometry=gpd.points_from_xy(philly_map[\"DEC_LONGITUDE\"], philly_map[\"DEC_LATITUDE\"]),\n    crs=\"EPSG:4326\"\n)\n\njoined = gpd.sjoin(\n    geo,\n    zip_shapes[[\"name\", \"geometry\"]],\n    how=\"left\",\n    predicate=\"within\"\n)\n\ntop_zip_crashes = joined.groupby(\"name\").size().sort_values(ascending=False).head(10)\n\nplt.figure(figsize=(10,5))\ntop_zip_crashes.sort_values().plot(kind=\"barh\")\nplt.title(\"Top 10 Zip Areas by Crash Count\")\nplt.xlabel(\"Crash count\")\nplt.ylabel(\"Zip area\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/005_blog/Untitled.html#crash-hotspots-are-not-spread-evenly-across-the-city",
+    "href": "posts/005_blog/Untitled.html#crash-hotspots-are-not-spread-evenly-across-the-city",
+    "title": "Fewer Crashes, Deadlier Streets",
+    "section": "Crash Hotspots Are Not Spread Evenly Across the City",
+    "text": "Crash Hotspots Are Not Spread Evenly Across the City\nThe data also shows that crashes are not happening evenly across Philadelphia.\nSome zip areas have far more crashes than others. That probably reflects a mix of traffic volume, major roads, commercial activity, and how many people move through those areas every day.\nThis matters because it shows that traffic danger is not just a citywide problem. It is also a neighborhood-level problem.\n\ntop_zip_fatalities = joined.groupby(\"name\")[\"FATAL_COUNT\"].sum().sort_values(ascending=False).head(10)\n\nplt.figure(figsize=(10,5))\ntop_zip_fatalities.sort_values().plot(kind=\"barh\")\nplt.title(\"Top 10 Zip Areas by Traffic Deaths\")\nplt.xlabel(\"Traffic deaths\")\nplt.ylabel(\"Zip area\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/005_blog/Untitled.html#the-most-crashes-and-the-most-deadly-areas-are-not-always-the-same",
+    "href": "posts/005_blog/Untitled.html#the-most-crashes-and-the-most-deadly-areas-are-not-always-the-same",
+    "title": "Fewer Crashes, Deadlier Streets",
+    "section": "The Most Crashes and the Most Deadly Areas Are Not Always the Same",
+    "text": "The Most Crashes and the Most Deadly Areas Are Not Always the Same\nThis is another important twist in the data.\nThe places with the most crashes are not always the exact same places with the most deaths. That means raw crash volume is only part of the story. Some places may have constant fender-benders and congestion, while others may see fewer crashes overall but more severe outcomes.\nThat difference is important if the goal is not just to reduce crashes, but to make streets actually safer."
+  },
+  {
+    "objectID": "posts/005_blog/Untitled.html#conclusion",
+    "href": "posts/005_blog/Untitled.html#conclusion",
+    "title": "Fewer Crashes, Deadlier Streets",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe most surprising thing in Philadelphia’s crash data is that fewer crashes do not automatically mean safer streets.\nYes, the total number of crashes appears to have gone down over time. But once deaths and crash severity are added, the story becomes more complicated. Some parts of the city carry much more of the burden, and some years look worse than the total crash count alone would suggest.\nThat is what makes data storytelling useful. The first graph tells one story. The rest of the data tells a deeper one.\nPhiladelphia may be seeing fewer crashes overall, but the real question is whether the city is preventing the crashes that matter most."
+  },
+  {
+    "objectID": "posts/006_blog/Untitled.html",
+    "href": "posts/006_blog/Untitled.html",
+    "title": "Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.",
+    "section": "",
+    "text": "Bike crashes are easy to picture as a nighttime problem. It feels intuitive: darkness, lower visibility, fewer people around, more danger.\nBut when I looked at the bicycle crash data for the Chapel Hill region, that was not the first pattern that jumped out.\nMost crashes actually happened in daylight, not at night. The bigger surprise was that the most severe crashes were much more concentrated in dark, unlit conditions than the overall totals would suggest.\nThat changes the story. The main problem is not just when crashes happen most often. It is when they become most dangerous.\n\n\n\nBike crash image\n\n\n\nimport json\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nwith open(\"bicycle-crash-data-chapel-hill-region.json\", \"r\") as f:\n    data = json.load(f)\n\ndf = pd.DataFrame(data)\n\ndf[\"sev_simple\"] = df[\"crsh_sevri\"].str[0]\n\nlight_counts = df[\"light_cond\"].value_counts()\n\nplt.figure(figsize=(10,5))\nlight_counts.plot(kind=\"bar\")\nplt.title(\"Bike Crashes by Light Condition\")\nplt.xlabel(\"Light condition\")\nplt.ylabel(\"Crash count\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\nAt first, the data points in a direction that feels unexpected. Most bike crashes in this dataset happened during daylight.\nThat probably reflects something simple: more people ride during the day, so there are more chances for crashes. In that sense, daylight is less a sign of safety than a sign of exposure. The more people riding, the more collisions can happen.\nSo if I stopped here, the story would be pretty straightforward: bike crashes are mostly a daytime problem.\n\nserious = df[df[\"sev_simple\"].isin([\"A\", \"K\"])].copy()\n\nserious_light = serious[\"light_cond\"].value_counts()\n\nplt.figure(figsize=(10,5))\nserious_light.plot(kind=\"bar\")\nplt.title(\"Most Severe Bike Crashes by Light Condition\")\nplt.xlabel(\"Light condition\")\nplt.ylabel(\"Serious crash count\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nThis is where the story changes.\nEven though most crashes overall happened in daylight, the most severe crashes were much more concentrated in dark, unlit conditions. In other words, daylight has more crashes, but darkness seems to carry more risk per crash.\nThat distinction matters. It suggests that frequency and danger are not the same thing.\nA place or condition can produce fewer crashes overall but still be more threatening because the outcomes are worse.\n\nspeed_counts = df[\"speed_limi\"].value_counts().sort_index()\n\nplt.figure(figsize=(10,5))\nspeed_counts.plot(kind=\"bar\")\nplt.title(\"Bike Crashes by Posted Speed Limit\")\nplt.xlabel(\"Speed limit\")\nplt.ylabel(\"Crash count\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nAnother interesting pattern is that a lot of crashes happened on roads posted at 20–25 mph and 30–35 mph.\nThat sounds reassuring at first, because those are not highway speeds. But it also suggests that lower posted speeds do not automatically protect cyclists if street design, visibility, turning behavior, and driver attention are still working against them.\nIn other words, bike danger in this region is not just about speed. It is also about the kinds of streets where bikes and cars are forced into conflict.\n\n\n\nThe crash types make the pattern even clearer.\nThe biggest categories are not random freak accidents. They are things like motorists overtaking bicyclists, left turns and merges, and drivers failing to yield. These are the kinds of crashes that come from ordinary street interactions going wrong.\nThat makes the story feel less like bad luck and more like a design problem. If the same conflict keeps appearing again and again, then the issue is probably built into how these roads work.\n\ncity_counts = df[\"city\"].value_counts()\n\nplt.figure(figsize=(10,5))\ncity_counts.plot(kind=\"bar\")\nplt.title(\"Bike Crashes by City\")\nplt.xlabel(\"City\")\nplt.ylabel(\"Crash count\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nMost crashes in this dataset happened in Chapel Hill, followed by Carrboro, with a smaller number in Durham and rural areas.\nThat does not automatically mean Chapel Hill is the least safe place to ride. It may simply reflect higher bike traffic and more dense street activity. But it does show where bike-car conflict shows up most often in the region.\nThe more important takeaway is that the danger is spread across both urban and rural settings. Urban areas produce more crashes overall, but the more serious crashes are not limited to one kind of place. Some of the worst outcomes show up on darker, faster, less forgiving roads too.\n\n\n\nThe most interesting thing in this dataset is that the most common bike crash conditions are not the same as the most dangerous ones.\nMost crashes happened in daylight, which makes sense because that is when most people are out riding. But the worst crashes were much more tied to dark, unlit conditions and roads where mistakes become more costly.\nThat is what makes this a real data story. The first pattern points one way. The deeper pattern complicates it.\nIf local leaders want to make biking safer, it probably is not enough to focus only on where crashes happen most often. They also need to pay attention to the conditions where crashes become severe."
+  },
+  {
+    "objectID": "posts/006_blog/Untitled.html#the-first-surprise-daylight-dominates",
+    "href": "posts/006_blog/Untitled.html#the-first-surprise-daylight-dominates",
+    "title": "Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.",
+    "section": "",
+    "text": "At first, the data points in a direction that feels unexpected. Most bike crashes in this dataset happened during daylight.\nThat probably reflects something simple: more people ride during the day, so there are more chances for crashes. In that sense, daylight is less a sign of safety than a sign of exposure. The more people riding, the more collisions can happen.\nSo if I stopped here, the story would be pretty straightforward: bike crashes are mostly a daytime problem.\n\nserious = df[df[\"sev_simple\"].isin([\"A\", \"K\"])].copy()\n\nserious_light = serious[\"light_cond\"].value_counts()\n\nplt.figure(figsize=(10,5))\nserious_light.plot(kind=\"bar\")\nplt.title(\"Most Severe Bike Crashes by Light Condition\")\nplt.xlabel(\"Light condition\")\nplt.ylabel(\"Serious crash count\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/006_blog/Untitled.html#the-twist-the-worst-crashes-cluster-in-the-dark",
+    "href": "posts/006_blog/Untitled.html#the-twist-the-worst-crashes-cluster-in-the-dark",
+    "title": "Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.",
+    "section": "",
+    "text": "This is where the story changes.\nEven though most crashes overall happened in daylight, the most severe crashes were much more concentrated in dark, unlit conditions. In other words, daylight has more crashes, but darkness seems to carry more risk per crash.\nThat distinction matters. It suggests that frequency and danger are not the same thing.\nA place or condition can produce fewer crashes overall but still be more threatening because the outcomes are worse.\n\nspeed_counts = df[\"speed_limi\"].value_counts().sort_index()\n\nplt.figure(figsize=(10,5))\nspeed_counts.plot(kind=\"bar\")\nplt.title(\"Bike Crashes by Posted Speed Limit\")\nplt.xlabel(\"Speed limit\")\nplt.ylabel(\"Crash count\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/006_blog/Untitled.html#slower-streets-arent-automatically-safe",
+    "href": "posts/006_blog/Untitled.html#slower-streets-arent-automatically-safe",
+    "title": "Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.",
+    "section": "",
+    "text": "Another interesting pattern is that a lot of crashes happened on roads posted at 20–25 mph and 30–35 mph.\nThat sounds reassuring at first, because those are not highway speeds. But it also suggests that lower posted speeds do not automatically protect cyclists if street design, visibility, turning behavior, and driver attention are still working against them.\nIn other words, bike danger in this region is not just about speed. It is also about the kinds of streets where bikes and cars are forced into conflict."
+  },
+  {
+    "objectID": "posts/006_blog/Untitled.html#a-lot-of-these-crashes-follow-the-same-script",
+    "href": "posts/006_blog/Untitled.html#a-lot-of-these-crashes-follow-the-same-script",
+    "title": "Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.",
+    "section": "",
+    "text": "The crash types make the pattern even clearer.\nThe biggest categories are not random freak accidents. They are things like motorists overtaking bicyclists, left turns and merges, and drivers failing to yield. These are the kinds of crashes that come from ordinary street interactions going wrong.\nThat makes the story feel less like bad luck and more like a design problem. If the same conflict keeps appearing again and again, then the issue is probably built into how these roads work.\n\ncity_counts = df[\"city\"].value_counts()\n\nplt.figure(figsize=(10,5))\ncity_counts.plot(kind=\"bar\")\nplt.title(\"Bike Crashes by City\")\nplt.xlabel(\"City\")\nplt.ylabel(\"Crash count\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/006_blog/Untitled.html#chapel-hill-has-the-most-crashes-but-that-is-not-the-whole-story",
+    "href": "posts/006_blog/Untitled.html#chapel-hill-has-the-most-crashes-but-that-is-not-the-whole-story",
+    "title": "Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.",
+    "section": "",
+    "text": "Most crashes in this dataset happened in Chapel Hill, followed by Carrboro, with a smaller number in Durham and rural areas.\nThat does not automatically mean Chapel Hill is the least safe place to ride. It may simply reflect higher bike traffic and more dense street activity. But it does show where bike-car conflict shows up most often in the region.\nThe more important takeaway is that the danger is spread across both urban and rural settings. Urban areas produce more crashes overall, but the more serious crashes are not limited to one kind of place. Some of the worst outcomes show up on darker, faster, less forgiving roads too."
+  },
+  {
+    "objectID": "posts/006_blog/Untitled.html#conclusion",
+    "href": "posts/006_blog/Untitled.html#conclusion",
+    "title": "Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.",
+    "section": "",
+    "text": "The most interesting thing in this dataset is that the most common bike crash conditions are not the same as the most dangerous ones.\nMost crashes happened in daylight, which makes sense because that is when most people are out riding. But the worst crashes were much more tied to dark, unlit conditions and roads where mistakes become more costly.\nThat is what makes this a real data story. The first pattern points one way. The deeper pattern complicates it.\nIf local leaders want to make biking safer, it probably is not enough to focus only on where crashes happen most often. They also need to pay attention to the conditions where crashes become severe."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Alex Rosen’s Blog Posts"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "My Data Stories",
     "section": "",
-    "text": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\n\n\n\n\n\n\n\nWhat Our Personalities Say About Us\n\n\n\npersonality\n\ndata\n\npsychology\n\n\n\nA data story about personality surveys, essays, social media posts, and what they suggest about human behavior.\n\n\n\n\n\nFeb 13, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nSpring Break in Philly: Worth Staying or Not?\n\n\n\nweather\n\nphiladelphia\n\nspring-break\n\n\n\nA data story about whether Philadelphia spring break weather is actually good enough to stay for.\n\n\n\n\n\nFeb 6, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nAlex’s Test\n\n\n\nLLMs\n\nLearning\n\n\n\nTesting Blogging\n\n\n\n\n\nFeb 1, 2025\n\n\nAlex\n\n\n\n\n\nNo matching items"
+    "text": "Fewer Crashes, Deadlier Streets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Do Tiny Cold Countries Win So Many Winter Olympic Medals?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMost Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.\n\n\n\nbikes\n\nsafety\n\ndata\n\n\n\nA data story about bicycle crashes in the Chapel Hill region and the difference between where crashes happen most often and where they become most serious.\n\n\n\n\n\nMar 22, 2026\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\n\n\n\n\n\n\n\nWhat Our Personalities Say About Us\n\n\n\npersonality\n\ndata\n\npsychology\n\n\n\nA data story about personality surveys, essays, social media posts, and what they suggest about human behavior.\n\n\n\n\n\nFeb 13, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nSpring Break in Philly: Worth Staying or Not?\n\n\n\nweather\n\nphiladelphia\n\nspring-break\n\n\n\nA data story about whether Philadelphia spring break weather is actually good enough to stay for.\n\n\n\n\n\nFeb 6, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nAlex’s Test\n\n\n\nLLMs\n\nLearning\n\n\n\nTesting Blogging\n\n\n\n\n\nFeb 1, 2025\n\n\nAlex\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/000_test_post/index.html",
+    "href": "posts/000_test_post/index.html",
+    "title": "A test post",
+    "section": "",
+    "text": "import matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "posts/000_test_post/index.html#stories-from-data",
+    "href": "posts/000_test_post/index.html#stories-from-data",
+    "title": "A test post",
+    "section": "Stories from data",
+    "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
+  },
+  {
+    "objectID": "posts/001_blog/medical_knowledge.ipynb.html",
+    "href": "posts/001_blog/medical_knowledge.ipynb.html",
+    "title": "Alex’s Test",
+    "section": "",
+    "text": "Test post 🎉\nThis is a test blog post to confirm that my GitHub Pages site is correctly building and rendering content exported from a Jupyter notebook.\nWhat I’m testing\nFront matter is being read correctly (title/date/categories)\nMarkdown renders (headers, lists, bold text)\nAn image loads from my repo\n\n\n\nPhiladelphia skyline test image"
   },
   {
     "objectID": "posts/004_blog/Untitled.html",
@@ -124,26 +236,5 @@
     "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
     "section": "Conclusion",
     "text": "Conclusion\nAt first, Winter Olympic success looks like a story about powerful countries winning the most medals. But once population is added, the story becomes much more interesting.\nThe countries that really stand out are not always the biggest ones. Smaller, colder countries often do the most with the least. Norway is the clearest example of this.\nSo the next time I watch the Winter Olympics, I probably will not be most impressed by whichever country wins the most medals overall. I will be paying more attention to which countries do the most with the fewest people."
-  },
-  {
-    "objectID": "posts/001_blog/medical_knowledge.ipynb.html",
-    "href": "posts/001_blog/medical_knowledge.ipynb.html",
-    "title": "Alex’s Test",
-    "section": "",
-    "text": "Test post 🎉\nThis is a test blog post to confirm that my GitHub Pages site is correctly building and rendering content exported from a Jupyter notebook.\nWhat I’m testing\nFront matter is being read correctly (title/date/categories)\nMarkdown renders (headers, lists, bold text)\nAn image loads from my repo\n\n\n\nPhiladelphia skyline test image"
-  },
-  {
-    "objectID": "posts/000_test_post/index.html",
-    "href": "posts/000_test_post/index.html",
-    "title": "A test post",
-    "section": "",
-    "text": "import matplotlib.pyplot as plt"
-  },
-  {
-    "objectID": "posts/000_test_post/index.html#stories-from-data",
-    "href": "posts/000_test_post/index.html#stories-from-data",
-    "title": "A test post",
-    "section": "Stories from data",
-    "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
   }
 ]

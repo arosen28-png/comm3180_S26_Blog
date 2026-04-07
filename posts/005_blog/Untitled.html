@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alex">
-<meta name="dcterms.date" content="2025-02-06">
-<meta name="description" content="A data story about whether Philadelphia spring break weather is actually good enough to stay for.">
+<meta name="dcterms.date" content="2026-03-14">
+<meta name="description" content="A data story about Philadelphia crashes from 2005 to 2024 and why lower crash totals do not always mean safer roads.">
 
-<title>Spring Break in Philly: Worth Staying or Not? – Alex Rosen’s Data Stories</title>
+<title>Fewer Crashes, Deadlier Streets – Alex Rosen’s Data Stories</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -115,16 +150,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Spring Break in Philly: Worth Staying or Not?</h1>
+      <h1 class="title">Fewer Crashes, Deadlier Streets</h1>
                   <div>
         <div class="description">
-          A data story about whether Philadelphia spring break weather is actually good enough to stay for.
+          A data story about Philadelphia crashes from 2005 to 2024 and why lower crash totals do not always mean safer roads.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">weather</div>
                 <div class="quarto-category">philadelphia</div>
-                <div class="quarto-category">spring-break</div>
+                <div class="quarto-category">traffic</div>
+                <div class="quarto-category">data</div>
               </div>
                   </div>
   </div>
@@ -142,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 6, 2025</p>
+        <p class="date">2026-03-14</p>
       </div>
     </div>
     
@@ -161,42 +196,129 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="spring-break-in-philly-worth-staying-or-not" class="level1">
-<h1>Spring Break in Philly: Worth Staying or Not?</h1>
-<p>Every Spring Break, people in Philly ask the same question:<br>
-should I travel somewhere warm, or can I just stay here and hope for good weather?</p>
-<p>Philly likes to <em>act</em> like spring starts in March, but sometimes it still feels like winter. Other days feel surprisingly nice. I wanted to see what Spring Break weather in Philly is <strong>actually</strong> like, not just what it feels like in one random year.</p>
-<p>To do this, I looked at daily weather data from Philadelphia from <strong>2005 to 2025</strong> and focused on the usual Spring Break window in mid-March.</p>
-<section id="what-spring-break-usually-feels-like" class="level2">
-<h2 class="anchored" data-anchor-id="what-spring-break-usually-feels-like">What Spring Break Usually Feels Like</h2>
-<p>When people think of Spring Break, they imagine warm days and being outside. In Philly, that sometimes happens — but not always.</p>
-<p>Looking at the data, most Spring Break days fall somewhere in the middle. They’re usually not freezing, but they’re also not consistently warm. Some days reach the low or mid-60s, while others stay much cooler.</p>
-<p>Basically, Spring Break in Philly is unpredictable. You might get a really nice day that feels like spring, and then the next day feels like winter again.</p>
-</section>
-<section id="rain-is-the-real-problem" class="level2">
-<h2 class="anchored" data-anchor-id="rain-is-the-real-problem">Rain Is the Real Problem</h2>
-<p>Cold weather can usually be handled with a jacket, but rain is harder to deal with. Rain ruins plans and makes it harder to enjoy being outside.</p>
-<p>The data shows that rain happens pretty often during Spring Break. Most years have at least one or two rainy days during that week. Snow is much less common, but it still happens occasionally, which is kind of shocking for March.</p>
-<p>This means that even if the temperature isn’t terrible, the weather can still mess up your plans.</p>
-</section>
-<section id="why-march-weather-is-so-annoying" class="level2">
-<h2 class="anchored" data-anchor-id="why-march-weather-is-so-annoying">Why March Weather Is So Annoying</h2>
-<p>One of the biggest problems with Spring Break weather in Philly is how much it changes during the day.</p>
-<p>Many days have a large gap between the high and low temperatures. That means it might feel okay in the afternoon, but be really cold in the morning or at night.</p>
-<p>March weather doesn’t stay consistent, which makes it hard to plan outfits or activities. It’s the kind of weather where you leave the house dressed for one season and come back dressed for another.</p>
-</section>
-<section id="so-should-you-stay-in-philly-for-spring-break" class="level2">
-<h2 class="anchored" data-anchor-id="so-should-you-stay-in-philly-for-spring-break">So… Should You Stay in Philly for Spring Break?</h2>
-<p>Based on the data, staying in Philly for Spring Break is a gamble.</p>
-<p>You will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.</p>
-<p>If you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.</p>
-<p>Spring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="springbreak.png" class="img-fluid figure-img"></p>
-<figcaption>Spring Break Weather in Philadelphia</figcaption>
+<p><img src="Image.png" class="img-fluid figure-img"></p>
+<figcaption>Philadelphia crash image</figcaption>
 </figure>
 </div>
+<section id="fewer-crashes-deadlier-streets" class="level1">
+<h1>Fewer Crashes, Deadlier Streets</h1>
+<p>If you only look at the total number of crashes in Philadelphia, the story seems simple: crashes have gone down over time.</p>
+<p>That sounds like good news. But when I looked more closely at the city’s crash data, the picture got a lot darker.</p>
+<p>Even as total crashes fell, traffic deaths did not fall with them. In fact, the years after 2020 were some of the deadliest in the dataset. That means Philly may be seeing fewer crashes overall, but the crashes that do happen are more likely to be deadly.</p>
+<p>That is a much more uncomfortable story and probably a more important one too.</p>
+<section id="the-first-story-crash-totals-really-did-fall" class="level2">
+<h2 class="anchored" data-anchor-id="the-first-story-crash-totals-really-did-fall">The First Story: Crash Totals Really Did Fall</h2>
+<p>At first glance, the graph looks like good news. Philadelphia had more reported crashes in the mid-2000s, and that number generally moved down over time.</p>
+<p>If you stopped there, the story would be simple: fewer crashes must mean safer streets.</p>
+<p>But crash totals only tell one part of the story. A city can have fewer crashes overall and still have a serious safety problem if the crashes that do happen are more severe.</p>
+<div id="53c9d8d5-2f51-476d-8259-e65f6f2c573c" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>annual[<span class="st">"fatalities"</span>] <span class="op">=</span> philly.groupby(<span class="st">"CRASH_YEAR"</span>)[<span class="st">"FATAL_COUNT"</span>].<span class="bu">sum</span>()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>annual[<span class="st">"fatal_per_1000_crashes"</span>] <span class="op">=</span> annual[<span class="st">"fatalities"</span>] <span class="op">/</span> annual[<span class="st">"crashes"</span>] <span class="op">*</span> <span class="dv">1000</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>fig, ax1 <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ax1.plot(annual.index, annual[<span class="st">"fatalities"</span>])</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">"Year"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">"Traffic deaths"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> ax1.twinx()</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>ax2.plot(annual.index, annual[<span class="st">"fatal_per_1000_crashes"</span>])</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">"Deaths per 1,000 crashes"</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Traffic Deaths and Death Risk per 1,000 Crashes"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-twist-lower-crash-counts-do-not-automatically-mean-safer-roads" class="level2">
+<h2 class="anchored" data-anchor-id="the-twist-lower-crash-counts-do-not-automatically-mean-safer-roads">The Twist: Lower Crash Counts Do Not Automatically Mean Safer Roads</h2>
+<p>This second graph changes the story.</p>
+<p>Even when total crashes go down, traffic deaths do not always fall at the same pace. In some years, the number of deaths stays stubbornly high. The death rate per 1,000 crashes also shows that the crashes that remain can be more serious.</p>
+<p>That is what makes this data interesting. It is possible for Philly to look better on one measure while still looking troubling on another.</p>
+<div id="aa14f673-2e49-451d-84a9-822ad9b38343" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>zip_shapes <span class="op">=</span> gpd.read_file(<span class="st">"philadelphia_zip_boundaries.geojson"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>philly_map <span class="op">=</span> philly[</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    philly[<span class="st">"DEC_LONGITUDE"</span>].between(<span class="op">-</span><span class="fl">75.35</span>, <span class="op">-</span><span class="fl">74.9</span>) <span class="op">&amp;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    philly[<span class="st">"DEC_LATITUDE"</span>].between(<span class="fl">39.8</span>, <span class="fl">40.2</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>].copy()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>geo <span class="op">=</span> gpd.GeoDataFrame(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    philly_map,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    geometry<span class="op">=</span>gpd.points_from_xy(philly_map[<span class="st">"DEC_LONGITUDE"</span>], philly_map[<span class="st">"DEC_LATITUDE"</span>]),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    crs<span class="op">=</span><span class="st">"EPSG:4326"</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>joined <span class="op">=</span> gpd.sjoin(</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    geo,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    zip_shapes[[<span class="st">"name"</span>, <span class="st">"geometry"</span>]],</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    how<span class="op">=</span><span class="st">"left"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    predicate<span class="op">=</span><span class="st">"within"</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>top_zip_crashes <span class="op">=</span> joined.groupby(<span class="st">"name"</span>).size().sort_values(ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>top_zip_crashes.sort_values().plot(kind<span class="op">=</span><span class="st">"barh"</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Top 10 Zip Areas by Crash Count"</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Crash count"</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Zip area"</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="crash-hotspots-are-not-spread-evenly-across-the-city" class="level2">
+<h2 class="anchored" data-anchor-id="crash-hotspots-are-not-spread-evenly-across-the-city">Crash Hotspots Are Not Spread Evenly Across the City</h2>
+<p>The data also shows that crashes are not happening evenly across Philadelphia.</p>
+<p>Some zip areas have far more crashes than others. That probably reflects a mix of traffic volume, major roads, commercial activity, and how many people move through those areas every day.</p>
+<p>This matters because it shows that traffic danger is not just a citywide problem. It is also a neighborhood-level problem.</p>
+<div id="50ef0ec0-1590-42ec-b2ca-36bf12cfd516" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>top_zip_fatalities <span class="op">=</span> joined.groupby(<span class="st">"name"</span>)[<span class="st">"FATAL_COUNT"</span>].<span class="bu">sum</span>().sort_values(ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>top_zip_fatalities.sort_values().plot(kind<span class="op">=</span><span class="st">"barh"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Top 10 Zip Areas by Traffic Deaths"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Traffic deaths"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Zip area"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-most-crashes-and-the-most-deadly-areas-are-not-always-the-same" class="level2">
+<h2 class="anchored" data-anchor-id="the-most-crashes-and-the-most-deadly-areas-are-not-always-the-same">The Most Crashes and the Most Deadly Areas Are Not Always the Same</h2>
+<p>This is another important twist in the data.</p>
+<p>The places with the most crashes are not always the exact same places with the most deaths. That means raw crash volume is only part of the story. Some places may have constant fender-benders and congestion, while others may see fewer crashes overall but more severe outcomes.</p>
+<p>That difference is important if the goal is not just to reduce crashes, but to make streets actually safer.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The most surprising thing in Philadelphia’s crash data is that fewer crashes do not automatically mean safer streets.</p>
+<p>Yes, the total number of crashes appears to have gone down over time. But once deaths and crash severity are added, the story becomes more complicated. Some parts of the city carry much more of the burden, and some years look worse than the total crash count alone would suggest.</p>
+<p>That is what makes data storytelling useful. The first graph tells one story. The rest of the data tells a deeper one.</p>
+<p>Philadelphia may be seeing fewer crashes overall, but the real question is whether the city is preventing the crashes that matter most.</p>
 
 
 </section>

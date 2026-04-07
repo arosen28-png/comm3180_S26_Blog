@@ -1,31 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://arosen28-png.github.io/comm3180_S26_Blog/about.html</loc>
-    <lastmod>2026-03-15T03:29:14.775Z</lastmod>
-  </url>
-  <url>
     <loc>https://arosen28-png.github.io/comm3180_S26_Blog/posts/003_blog/Untitled.html</loc>
-    <lastmod>2026-03-15T03:29:14.787Z</lastmod>
+    <lastmod>2026-04-07T01:28:30.515Z</lastmod>
   </url>
   <url>
     <loc>https://arosen28-png.github.io/comm3180_S26_Blog/posts/002_blog/Untitled.html</loc>
-    <lastmod>2026-03-15T03:29:14.776Z</lastmod>
+    <lastmod>2026-04-07T01:28:30.505Z</lastmod>
+  </url>
+  <url>
+    <loc>https://arosen28-png.github.io/comm3180_S26_Blog/posts/005_blog/Untitled.html</loc>
+    <lastmod>2026-04-07T01:28:30.668Z</lastmod>
+  </url>
+  <url>
+    <loc>https://arosen28-png.github.io/comm3180_S26_Blog/posts/006_blog/Untitled.html</loc>
+    <lastmod>2026-04-07T01:28:30.754Z</lastmod>
+  </url>
+  <url>
+    <loc>https://arosen28-png.github.io/comm3180_S26_Blog/about.html</loc>
+    <lastmod>2026-04-07T01:28:30.504Z</lastmod>
   </url>
   <url>
     <loc>https://arosen28-png.github.io/comm3180_S26_Blog/index.html</loc>
-    <lastmod>2026-03-15T03:29:14.775Z</lastmod>
-  </url>
-  <url>
-    <loc>https://arosen28-png.github.io/comm3180_S26_Blog/posts/004_blog/Untitled.html</loc>
-    <lastmod>2026-03-15T03:29:14.803Z</lastmod>
-  </url>
-  <url>
-    <loc>https://arosen28-png.github.io/comm3180_S26_Blog/posts/001_blog/medical_knowledge.ipynb.html</loc>
-    <lastmod>2026-03-15T03:29:14.776Z</lastmod>
+    <lastmod>2026-04-07T01:28:30.504Z</lastmod>
   </url>
   <url>
     <loc>https://arosen28-png.github.io/comm3180_S26_Blog/posts/000_test_post/index.html</loc>
-    <lastmod>2026-03-15T03:29:14.775Z</lastmod>
+    <lastmod>2026-04-07T01:28:30.504Z</lastmod>
+  </url>
+  <url>
+    <loc>https://arosen28-png.github.io/comm3180_S26_Blog/posts/001_blog/medical_knowledge.ipynb.html</loc>
+    <lastmod>2026-04-07T01:28:30.505Z</lastmod>
+  </url>
+  <url>
+    <loc>https://arosen28-png.github.io/comm3180_S26_Blog/posts/004_blog/Untitled.html</loc>
+    <lastmod>2026-04-07T01:28:30.530Z</lastmod>
   </url>
 </urlset>

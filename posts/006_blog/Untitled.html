@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alex">
-<meta name="dcterms.date" content="2025-02-06">
-<meta name="description" content="A data story about whether Philadelphia spring break weather is actually good enough to stay for.">
+<meta name="dcterms.date" content="2026-03-22">
+<meta name="description" content="A data story about bicycle crashes in the Chapel Hill region and the difference between where crashes happen most often and where they become most serious.">
 
-<title>Spring Break in Philly: Worth Staying or Not? – Alex Rosen’s Data Stories</title>
+<title>Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t. – Alex Rosen’s Data Stories</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -115,16 +150,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Spring Break in Philly: Worth Staying or Not?</h1>
+      <h1 class="title">Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.</h1>
                   <div>
         <div class="description">
-          A data story about whether Philadelphia spring break weather is actually good enough to stay for.
+          A data story about bicycle crashes in the Chapel Hill region and the difference between where crashes happen most often and where they become most serious.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">weather</div>
-                <div class="quarto-category">philadelphia</div>
-                <div class="quarto-category">spring-break</div>
+                <div class="quarto-category">bikes</div>
+                <div class="quarto-category">safety</div>
+                <div class="quarto-category">data</div>
               </div>
                   </div>
   </div>
@@ -142,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 6, 2025</p>
+        <p class="date">March 22, 2026</p>
       </div>
     </div>
     
@@ -161,42 +196,140 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="spring-break-in-philly-worth-staying-or-not" class="level1">
-<h1>Spring Break in Philly: Worth Staying or Not?</h1>
-<p>Every Spring Break, people in Philly ask the same question:<br>
-should I travel somewhere warm, or can I just stay here and hope for good weather?</p>
-<p>Philly likes to <em>act</em> like spring starts in March, but sometimes it still feels like winter. Other days feel surprisingly nice. I wanted to see what Spring Break weather in Philly is <strong>actually</strong> like, not just what it feels like in one random year.</p>
-<p>To do this, I looked at daily weather data from Philadelphia from <strong>2005 to 2025</strong> and focused on the usual Spring Break window in mid-March.</p>
-<section id="what-spring-break-usually-feels-like" class="level2">
-<h2 class="anchored" data-anchor-id="what-spring-break-usually-feels-like">What Spring Break Usually Feels Like</h2>
-<p>When people think of Spring Break, they imagine warm days and being outside. In Philly, that sometimes happens — but not always.</p>
-<p>Looking at the data, most Spring Break days fall somewhere in the middle. They’re usually not freezing, but they’re also not consistently warm. Some days reach the low or mid-60s, while others stay much cooler.</p>
-<p>Basically, Spring Break in Philly is unpredictable. You might get a really nice day that feels like spring, and then the next day feels like winter again.</p>
-</section>
-<section id="rain-is-the-real-problem" class="level2">
-<h2 class="anchored" data-anchor-id="rain-is-the-real-problem">Rain Is the Real Problem</h2>
-<p>Cold weather can usually be handled with a jacket, but rain is harder to deal with. Rain ruins plans and makes it harder to enjoy being outside.</p>
-<p>The data shows that rain happens pretty often during Spring Break. Most years have at least one or two rainy days during that week. Snow is much less common, but it still happens occasionally, which is kind of shocking for March.</p>
-<p>This means that even if the temperature isn’t terrible, the weather can still mess up your plans.</p>
-</section>
-<section id="why-march-weather-is-so-annoying" class="level2">
-<h2 class="anchored" data-anchor-id="why-march-weather-is-so-annoying">Why March Weather Is So Annoying</h2>
-<p>One of the biggest problems with Spring Break weather in Philly is how much it changes during the day.</p>
-<p>Many days have a large gap between the high and low temperatures. That means it might feel okay in the afternoon, but be really cold in the morning or at night.</p>
-<p>March weather doesn’t stay consistent, which makes it hard to plan outfits or activities. It’s the kind of weather where you leave the house dressed for one season and come back dressed for another.</p>
-</section>
-<section id="so-should-you-stay-in-philly-for-spring-break" class="level2">
-<h2 class="anchored" data-anchor-id="so-should-you-stay-in-philly-for-spring-break">So… Should You Stay in Philly for Spring Break?</h2>
-<p>Based on the data, staying in Philly for Spring Break is a gamble.</p>
-<p>You will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.</p>
-<p>If you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.</p>
-<p>Spring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable.</p>
+<section id="most-bike-crashes-happen-in-broad-daylight.-the-worst-ones-dont." class="level1">
+<h1>Most Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.</h1>
+<p>Bike crashes are easy to picture as a nighttime problem. It feels intuitive: darkness, lower visibility, fewer people around, more danger.</p>
+<p>But when I looked at the bicycle crash data for the Chapel Hill region, that was not the first pattern that jumped out.</p>
+<p>Most crashes actually happened in <strong>daylight</strong>, not at night. The bigger surprise was that the <strong>most severe crashes were much more concentrated in dark, unlit conditions</strong> than the overall totals would suggest.</p>
+<p>That changes the story. The main problem is not just when crashes happen most often. It is when they become most dangerous.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="springbreak.png" class="img-fluid figure-img"></p>
-<figcaption>Spring Break Weather in Philadelphia</figcaption>
+<p><img src="bike_crash_image.png" class="img-fluid figure-img"></p>
+<figcaption>Bike crash image</figcaption>
 </figure>
 </div>
+<div id="fd5cc733-e26b-4cc5-b44b-19e5930ec446" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"bicycle-crash-data-chapel-hill-region.json"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> json.load(f)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"sev_simple"</span>] <span class="op">=</span> df[<span class="st">"crsh_sevri"</span>].<span class="bu">str</span>[<span class="dv">0</span>]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>light_counts <span class="op">=</span> df[<span class="st">"light_cond"</span>].value_counts()</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>light_counts.plot(kind<span class="op">=</span><span class="st">"bar"</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Bike Crashes by Light Condition"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Light condition"</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Crash count"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="the-first-surprise-daylight-dominates" class="level2">
+<h2 class="anchored" data-anchor-id="the-first-surprise-daylight-dominates">The First Surprise: Daylight Dominates</h2>
+<p>At first, the data points in a direction that feels unexpected. Most bike crashes in this dataset happened during <strong>daylight</strong>.</p>
+<p>That probably reflects something simple: more people ride during the day, so there are more chances for crashes. In that sense, daylight is less a sign of safety than a sign of exposure. The more people riding, the more collisions can happen.</p>
+<p>So if I stopped here, the story would be pretty straightforward: bike crashes are mostly a daytime problem.</p>
+<div id="d3d6c480-cda8-4adf-9d71-ce193992f630" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>serious <span class="op">=</span> df[df[<span class="st">"sev_simple"</span>].isin([<span class="st">"A"</span>, <span class="st">"K"</span>])].copy()</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>serious_light <span class="op">=</span> serious[<span class="st">"light_cond"</span>].value_counts()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>serious_light.plot(kind<span class="op">=</span><span class="st">"bar"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Most Severe Bike Crashes by Light Condition"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Light condition"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Serious crash count"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-twist-the-worst-crashes-cluster-in-the-dark" class="level2">
+<h2 class="anchored" data-anchor-id="the-twist-the-worst-crashes-cluster-in-the-dark">The Twist: The Worst Crashes Cluster in the Dark</h2>
+<p>This is where the story changes.</p>
+<p>Even though most crashes overall happened in daylight, the <strong>most severe crashes</strong> were much more concentrated in <strong>dark, unlit conditions</strong>. In other words, daylight has more crashes, but darkness seems to carry more risk per crash.</p>
+<p>That distinction matters. It suggests that frequency and danger are not the same thing.</p>
+<p>A place or condition can produce fewer crashes overall but still be more threatening because the outcomes are worse.</p>
+<div id="339aeefc-50ba-49c1-94c0-0843f1f950e8" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>speed_counts <span class="op">=</span> df[<span class="st">"speed_limi"</span>].value_counts().sort_index()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>speed_counts.plot(kind<span class="op">=</span><span class="st">"bar"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Bike Crashes by Posted Speed Limit"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Speed limit"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Crash count"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="slower-streets-arent-automatically-safe" class="level2">
+<h2 class="anchored" data-anchor-id="slower-streets-arent-automatically-safe">Slower Streets Aren’t Automatically Safe</h2>
+<p>Another interesting pattern is that a lot of crashes happened on roads posted at <strong>20–25 mph</strong> and <strong>30–35 mph</strong>.</p>
+<p>That sounds reassuring at first, because those are not highway speeds. But it also suggests that lower posted speeds do not automatically protect cyclists if street design, visibility, turning behavior, and driver attention are still working against them.</p>
+<p>In other words, bike danger in this region is not just about speed. It is also about the kinds of streets where bikes and cars are forced into conflict.</p>
+</section>
+<section id="a-lot-of-these-crashes-follow-the-same-script" class="level2">
+<h2 class="anchored" data-anchor-id="a-lot-of-these-crashes-follow-the-same-script">A Lot of These Crashes Follow the Same Script</h2>
+<p>The crash types make the pattern even clearer.</p>
+<p>The biggest categories are not random freak accidents. They are things like <strong>motorists overtaking bicyclists</strong>, <strong>left turns and merges</strong>, and <strong>drivers failing to yield</strong>. These are the kinds of crashes that come from ordinary street interactions going wrong.</p>
+<p>That makes the story feel less like bad luck and more like a design problem. If the same conflict keeps appearing again and again, then the issue is probably built into how these roads work.</p>
+<div id="a344090d-a2a0-4b98-844b-8a81272c00e5" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>city_counts <span class="op">=</span> df[<span class="st">"city"</span>].value_counts()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>city_counts.plot(kind<span class="op">=</span><span class="st">"bar"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Bike Crashes by City"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"City"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Crash count"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="chapel-hill-has-the-most-crashes-but-that-is-not-the-whole-story" class="level2">
+<h2 class="anchored" data-anchor-id="chapel-hill-has-the-most-crashes-but-that-is-not-the-whole-story">Chapel Hill Has the Most Crashes, but That Is Not the Whole Story</h2>
+<p>Most crashes in this dataset happened in <strong>Chapel Hill</strong>, followed by <strong>Carrboro</strong>, with a smaller number in <strong>Durham</strong> and rural areas.</p>
+<p>That does not automatically mean Chapel Hill is the least safe place to ride. It may simply reflect higher bike traffic and more dense street activity. But it does show where bike-car conflict shows up most often in the region.</p>
+<p>The more important takeaway is that the danger is spread across both urban and rural settings. Urban areas produce more crashes overall, but the more serious crashes are not limited to one kind of place. Some of the worst outcomes show up on darker, faster, less forgiving roads too.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The most interesting thing in this dataset is that the most common bike crash conditions are not the same as the most dangerous ones.</p>
+<p>Most crashes happened in daylight, which makes sense because that is when most people are out riding. But the worst crashes were much more tied to dark, unlit conditions and roads where mistakes become more costly.</p>
+<p>That is what makes this a real data story. The first pattern points one way. The deeper pattern complicates it.</p>
+<p>If local leaders want to make biking safer, it probably is not enough to focus only on where crashes happen most often. They also need to pay attention to the conditions where crashes become severe.</p>
 
 
 </section>
