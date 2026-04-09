@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Data Stories",
+    "section": "",
+    "text": "Fewer Crashes, Deadlier Streets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Do Tiny Cold Countries Win So Many Winter Olympic Medals?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMost Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.\n\n\n\nbikes\n\nsafety\n\ndata\n\n\n\nA data story about bicycle crashes in the Chapel Hill region and the difference between where crashes happen most often and where they become most serious.\n\n\n\n\n\nMar 22, 2026\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\n\n\n\n\n\n\n\nWhat Our Personalities Say About Us\n\n\n\npersonality\n\ndata\n\npsychology\n\n\n\nA data story about personality surveys, essays, social media posts, and what they suggest about human behavior.\n\n\n\n\n\nFeb 13, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nSpring Break in Philly: Worth Staying or Not?\n\n\n\nweather\n\nphiladelphia\n\nspring-break\n\n\n\nA data story about whether Philadelphia spring break weather is actually good enough to stay for.\n\n\n\n\n\nFeb 6, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nAlex’s Test\n\n\n\nLLMs\n\nLearning\n\n\n\nTesting Blogging\n\n\n\n\n\nFeb 1, 2025\n\n\nAlex\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/003_blog/Untitled.html",
     "href": "posts/003_blog/Untitled.html",
     "title": "What Our Personalities Say About Us",
@@ -42,39 +49,25 @@
     "text": "Looking across these datasets, one thing becomes clear: personality is complicated.\nNo single test captures everything about a person. But when you look at personality from multiple angles — surveys, essays, and social media — interesting patterns start to appear.\nThe data suggests that personality influences how people think, how they write, and even how they communicate online.\nAt the same time, most people are not extremely different from each other. Instead, personality tends to exist on a spectrum where people share many traits but express them in slightly different ways.\nIn the end, personality tests might not perfectly define who we are, but they can still reveal some surprising insights about human behavior.\n\n\n\nPersonality Data Visualization"
   },
   {
-    "objectID": "posts/002_blog/Untitled.html",
-    "href": "posts/002_blog/Untitled.html",
-    "title": "Spring Break in Philly: Worth Staying or Not?",
+    "objectID": "posts/000_test_post/index.html",
+    "href": "posts/000_test_post/index.html",
+    "title": "A test post",
     "section": "",
-    "text": "Every Spring Break, people in Philly ask the same question:\nshould I travel somewhere warm, or can I just stay here and hope for good weather?\nPhilly likes to act like spring starts in March, but sometimes it still feels like winter. Other days feel surprisingly nice. I wanted to see what Spring Break weather in Philly is actually like, not just what it feels like in one random year.\nTo do this, I looked at daily weather data from Philadelphia from 2005 to 2025 and focused on the usual Spring Break window in mid-March.\n\n\nWhen people think of Spring Break, they imagine warm days and being outside. In Philly, that sometimes happens — but not always.\nLooking at the data, most Spring Break days fall somewhere in the middle. They’re usually not freezing, but they’re also not consistently warm. Some days reach the low or mid-60s, while others stay much cooler.\nBasically, Spring Break in Philly is unpredictable. You might get a really nice day that feels like spring, and then the next day feels like winter again.\n\n\n\nCold weather can usually be handled with a jacket, but rain is harder to deal with. Rain ruins plans and makes it harder to enjoy being outside.\nThe data shows that rain happens pretty often during Spring Break. Most years have at least one or two rainy days during that week. Snow is much less common, but it still happens occasionally, which is kind of shocking for March.\nThis means that even if the temperature isn’t terrible, the weather can still mess up your plans.\n\n\n\nOne of the biggest problems with Spring Break weather in Philly is how much it changes during the day.\nMany days have a large gap between the high and low temperatures. That means it might feel okay in the afternoon, but be really cold in the morning or at night.\nMarch weather doesn’t stay consistent, which makes it hard to plan outfits or activities. It’s the kind of weather where you leave the house dressed for one season and come back dressed for another.\n\n\n\nBased on the data, staying in Philly for Spring Break is a gamble.\nYou will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.\nIf you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.\nSpring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable.\n\n\n\nSpring Break Weather in Philadelphia"
+    "text": "import matplotlib.pyplot as plt"
   },
   {
-    "objectID": "posts/002_blog/Untitled.html#what-spring-break-usually-feels-like",
-    "href": "posts/002_blog/Untitled.html#what-spring-break-usually-feels-like",
-    "title": "Spring Break in Philly: Worth Staying or Not?",
-    "section": "",
-    "text": "When people think of Spring Break, they imagine warm days and being outside. In Philly, that sometimes happens — but not always.\nLooking at the data, most Spring Break days fall somewhere in the middle. They’re usually not freezing, but they’re also not consistently warm. Some days reach the low or mid-60s, while others stay much cooler.\nBasically, Spring Break in Philly is unpredictable. You might get a really nice day that feels like spring, and then the next day feels like winter again."
+    "objectID": "posts/000_test_post/index.html#stories-from-data",
+    "href": "posts/000_test_post/index.html#stories-from-data",
+    "title": "A test post",
+    "section": "Stories from data",
+    "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
   },
   {
-    "objectID": "posts/002_blog/Untitled.html#rain-is-the-real-problem",
-    "href": "posts/002_blog/Untitled.html#rain-is-the-real-problem",
-    "title": "Spring Break in Philly: Worth Staying or Not?",
+    "objectID": "posts/001_blog/medical_knowledge.ipynb.html",
+    "href": "posts/001_blog/medical_knowledge.ipynb.html",
+    "title": "Alex’s Test",
     "section": "",
-    "text": "Cold weather can usually be handled with a jacket, but rain is harder to deal with. Rain ruins plans and makes it harder to enjoy being outside.\nThe data shows that rain happens pretty often during Spring Break. Most years have at least one or two rainy days during that week. Snow is much less common, but it still happens occasionally, which is kind of shocking for March.\nThis means that even if the temperature isn’t terrible, the weather can still mess up your plans."
-  },
-  {
-    "objectID": "posts/002_blog/Untitled.html#why-march-weather-is-so-annoying",
-    "href": "posts/002_blog/Untitled.html#why-march-weather-is-so-annoying",
-    "title": "Spring Break in Philly: Worth Staying or Not?",
-    "section": "",
-    "text": "One of the biggest problems with Spring Break weather in Philly is how much it changes during the day.\nMany days have a large gap between the high and low temperatures. That means it might feel okay in the afternoon, but be really cold in the morning or at night.\nMarch weather doesn’t stay consistent, which makes it hard to plan outfits or activities. It’s the kind of weather where you leave the house dressed for one season and come back dressed for another."
-  },
-  {
-    "objectID": "posts/002_blog/Untitled.html#so-should-you-stay-in-philly-for-spring-break",
-    "href": "posts/002_blog/Untitled.html#so-should-you-stay-in-philly-for-spring-break",
-    "title": "Spring Break in Philly: Worth Staying or Not?",
-    "section": "",
-    "text": "Based on the data, staying in Philly for Spring Break is a gamble.\nYou will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.\nIf you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.\nSpring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable.\n\n\n\nSpring Break Weather in Philadelphia"
+    "text": "Test post 🎉\nThis is a test blog post to confirm that my GitHub Pages site is correctly building and rendering content exported from a Jupyter notebook.\nWhat I’m testing\nFront matter is being read correctly (title/date/categories)\nMarkdown renders (headers, lists, bold text)\nAn image loads from my repo\n\n\n\nPhiladelphia skyline test image"
   },
   {
     "objectID": "posts/005_blog/Untitled.html",
@@ -117,6 +110,76 @@
     "title": "Fewer Crashes, Deadlier Streets",
     "section": "Conclusion",
     "text": "Conclusion\nThe most surprising thing in Philadelphia’s crash data is that fewer crashes do not automatically mean safer streets.\nYes, the total number of crashes appears to have gone down over time. But once deaths and crash severity are added, the story becomes more complicated. Some parts of the city carry much more of the burden, and some years look worse than the total crash count alone would suggest.\nThat is what makes data storytelling useful. The first graph tells one story. The rest of the data tells a deeper one.\nPhiladelphia may be seeing fewer crashes overall, but the real question is whether the city is preventing the crashes that matter most."
+  },
+  {
+    "objectID": "posts/004_blog/Untitled.html",
+    "href": "posts/004_blog/Untitled.html",
+    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
+    "section": "",
+    "text": "Winter Olympics image"
+  },
+  {
+    "objectID": "posts/004_blog/Untitled.html#total-medals-tell-one-story",
+    "href": "posts/004_blog/Untitled.html#total-medals-tell-one-story",
+    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
+    "section": "Total Medals Tell One Story",
+    "text": "Total Medals Tell One Story\nIf you just count medals, countries like the United States, Canada, Germany, and Norway rise to the top. That makes sense. These countries have large sports systems, long Olympic histories, and lots of resources.\nAt first, it looks like the story is simple: the biggest and strongest countries win the most.\n\n# use 2023 population as the closest recent comparison\npop_2023 = pop[[\"Country Code\", \"2023\"]].copy()\npop_2023.columns = [\"noc\", \"population\"]\n\ncountry_map = {\n    \"USA\": \"USA\",\n    \"CAN\": \"CAN\",\n    \"NOR\": \"NOR\",\n    \"SWE\": \"SWE\",\n    \"FIN\": \"FIN\",\n    \"GER\": \"DEU\",\n    \"FRA\": \"FRA\",\n    \"ITA\": \"ITA\",\n    \"SUI\": \"CHE\",\n    \"AUT\": \"AUT\",\n    \"NED\": \"NLD\"\n}\n\nmedal_df = medal_counts.reset_index()\nmedal_df.columns = [\"noc\", \"medals\"]\nmedal_df[\"pop_code\"] = medal_df[\"noc\"].map(country_map)\n\nmerged = medal_df.merge(pop_2023, left_on=\"pop_code\", right_on=\"noc\", how=\"left\", suffixes=(\"_medal\", \"_pop\"))\nmerged[\"medals_per_million\"] = merged[\"medals\"] / (merged[\"population\"] / 1_000_000)\n\nper_million = merged.dropna(subset=[\"medals_per_million\"]).sort_values(\"medals_per_million\", ascending=False).head(10)\n\nplt.figure(figsize=(10,5))\nplt.bar(per_million[\"noc_medal\"], per_million[\"medals_per_million\"])\nplt.title(\"Top Countries by Winter Olympic Medals Per Million People\")\nplt.ylabel(\"Medals Per Million People\")\nplt.xlabel(\"Country Code\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/004_blog/Untitled.html#population-changes-the-story",
+    "href": "posts/004_blog/Untitled.html#population-changes-the-story",
+    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
+    "section": "Population Changes the Story",
+    "text": "Population Changes the Story\nOnce population is added, the ranking changes a lot.\nBig countries still do well, but smaller countries start to look much more impressive. A country with a small population that wins a lot of medals is doing something special.\nThis is where countries like Norway, Finland, and Sweden really stand out. They may not always have the biggest populations, but they consistently produce amazing results in winter sports.\n\nfocus = merged[merged[\"noc_medal\"].isin([\"USA\", \"CAN\", \"NOR\", \"SWE\", \"FIN\"])].copy()\nfocus = focus.sort_values(\"medals_per_million\", ascending=False)\n\nplt.figure(figsize=(10,5))\nplt.bar(focus[\"noc_medal\"], focus[\"medals_per_million\"])\nplt.title(\"Winter Olympic Medals Per Million: USA vs Canada vs Nordic Countries\")\nplt.ylabel(\"Medals Per Million People\")\nplt.xlabel(\"Country Code\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nbios = pd.read_csv(\"bios.csv\")\n\nathletes_by_country = bios[\"NOC\"].value_counts().head(10)\n\nplt.figure(figsize=(10,5))\nathletes_by_country.plot(kind=\"bar\")\nplt.title(\"Countries With the Most Athletes in the Bio Dataset\")\nplt.ylabel(\"Number of Athletes\")\nplt.xlabel(\"Country\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "posts/004_blog/Untitled.html#athletes-matter-too",
+    "href": "posts/004_blog/Untitled.html#athletes-matter-too",
+    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
+    "section": "Athletes Matter Too",
+    "text": "Athletes Matter Too\nAnother way to think about this is by looking at how many athletes come from each country. Bigger countries often send more athletes, which gives them more chances to win medals.\nBut even then, some countries still perform above expectations. That makes the story more interesting. It is not just about sending the most people. It is about building a system where winter sports are part of national identity."
+  },
+  {
+    "objectID": "posts/004_blog/Untitled.html#conclusion",
+    "href": "posts/004_blog/Untitled.html#conclusion",
+    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
+    "section": "Conclusion",
+    "text": "Conclusion\nAt first, Winter Olympic success looks like a story about powerful countries winning the most medals. But once population is added, the story becomes much more interesting.\nThe countries that really stand out are not always the biggest ones. Smaller, colder countries often do the most with the least. Norway is the clearest example of this.\nSo the next time I watch the Winter Olympics, I probably will not be most impressed by whichever country wins the most medals overall. I will be paying more attention to which countries do the most with the fewest people."
+  },
+  {
+    "objectID": "posts/002_blog/Untitled.html",
+    "href": "posts/002_blog/Untitled.html",
+    "title": "Spring Break in Philly: Worth Staying or Not?",
+    "section": "",
+    "text": "Every Spring Break, people in Philly ask the same question:\nshould I travel somewhere warm, or can I just stay here and hope for good weather?\nPhilly likes to act like spring starts in March, but sometimes it still feels like winter. Other days feel surprisingly nice. I wanted to see what Spring Break weather in Philly is actually like, not just what it feels like in one random year.\nTo do this, I looked at daily weather data from Philadelphia from 2005 to 2025 and focused on the usual Spring Break window in mid-March.\n\n\nWhen people think of Spring Break, they imagine warm days and being outside. In Philly, that sometimes happens — but not always.\nLooking at the data, most Spring Break days fall somewhere in the middle. They’re usually not freezing, but they’re also not consistently warm. Some days reach the low or mid-60s, while others stay much cooler.\nBasically, Spring Break in Philly is unpredictable. You might get a really nice day that feels like spring, and then the next day feels like winter again.\n\n\n\nCold weather can usually be handled with a jacket, but rain is harder to deal with. Rain ruins plans and makes it harder to enjoy being outside.\nThe data shows that rain happens pretty often during Spring Break. Most years have at least one or two rainy days during that week. Snow is much less common, but it still happens occasionally, which is kind of shocking for March.\nThis means that even if the temperature isn’t terrible, the weather can still mess up your plans.\n\n\n\nOne of the biggest problems with Spring Break weather in Philly is how much it changes during the day.\nMany days have a large gap between the high and low temperatures. That means it might feel okay in the afternoon, but be really cold in the morning or at night.\nMarch weather doesn’t stay consistent, which makes it hard to plan outfits or activities. It’s the kind of weather where you leave the house dressed for one season and come back dressed for another.\n\n\n\nBased on the data, staying in Philly for Spring Break is a gamble.\nYou will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.\nIf you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.\nSpring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable.\n\n\n\nSpring Break Weather in Philadelphia"
+  },
+  {
+    "objectID": "posts/002_blog/Untitled.html#what-spring-break-usually-feels-like",
+    "href": "posts/002_blog/Untitled.html#what-spring-break-usually-feels-like",
+    "title": "Spring Break in Philly: Worth Staying or Not?",
+    "section": "",
+    "text": "When people think of Spring Break, they imagine warm days and being outside. In Philly, that sometimes happens — but not always.\nLooking at the data, most Spring Break days fall somewhere in the middle. They’re usually not freezing, but they’re also not consistently warm. Some days reach the low or mid-60s, while others stay much cooler.\nBasically, Spring Break in Philly is unpredictable. You might get a really nice day that feels like spring, and then the next day feels like winter again."
+  },
+  {
+    "objectID": "posts/002_blog/Untitled.html#rain-is-the-real-problem",
+    "href": "posts/002_blog/Untitled.html#rain-is-the-real-problem",
+    "title": "Spring Break in Philly: Worth Staying or Not?",
+    "section": "",
+    "text": "Cold weather can usually be handled with a jacket, but rain is harder to deal with. Rain ruins plans and makes it harder to enjoy being outside.\nThe data shows that rain happens pretty often during Spring Break. Most years have at least one or two rainy days during that week. Snow is much less common, but it still happens occasionally, which is kind of shocking for March.\nThis means that even if the temperature isn’t terrible, the weather can still mess up your plans."
+  },
+  {
+    "objectID": "posts/002_blog/Untitled.html#why-march-weather-is-so-annoying",
+    "href": "posts/002_blog/Untitled.html#why-march-weather-is-so-annoying",
+    "title": "Spring Break in Philly: Worth Staying or Not?",
+    "section": "",
+    "text": "One of the biggest problems with Spring Break weather in Philly is how much it changes during the day.\nMany days have a large gap between the high and low temperatures. That means it might feel okay in the afternoon, but be really cold in the morning or at night.\nMarch weather doesn’t stay consistent, which makes it hard to plan outfits or activities. It’s the kind of weather where you leave the house dressed for one season and come back dressed for another."
+  },
+  {
+    "objectID": "posts/002_blog/Untitled.html#so-should-you-stay-in-philly-for-spring-break",
+    "href": "posts/002_blog/Untitled.html#so-should-you-stay-in-philly-for-spring-break",
+    "title": "Spring Break in Philly: Worth Staying or Not?",
+    "section": "",
+    "text": "Based on the data, staying in Philly for Spring Break is a gamble.\nYou will probably get at least a few decent days. You’ll also probably deal with rain, cold mornings, or sudden weather changes. Snow isn’t common, but it’s not impossible either.\nIf you’re okay with unpredictable weather and want to save money, staying in Philly isn’t a terrible choice. But if you want guaranteed warmth and sunshine, Philly in March might not be the best bet.\nSpring Break in Philly isn’t amazing — but it’s not awful either. It’s just unpredictable.\n\n\n\nSpring Break Weather in Philadelphia"
   },
   {
     "objectID": "posts/006_blog/Untitled.html",
@@ -173,68 +236,5 @@
     "title": "About",
     "section": "",
     "text": "Alex Rosen’s Blog Posts"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Data Stories",
-    "section": "",
-    "text": "Fewer Crashes, Deadlier Streets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Do Tiny Cold Countries Win So Many Winter Olympic Medals?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMost Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.\n\n\n\nbikes\n\nsafety\n\ndata\n\n\n\nA data story about bicycle crashes in the Chapel Hill region and the difference between where crashes happen most often and where they become most serious.\n\n\n\n\n\nMar 22, 2026\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nA test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\n\n\n\n\n\n\n\nWhat Our Personalities Say About Us\n\n\n\npersonality\n\ndata\n\npsychology\n\n\n\nA data story about personality surveys, essays, social media posts, and what they suggest about human behavior.\n\n\n\n\n\nFeb 13, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nSpring Break in Philly: Worth Staying or Not?\n\n\n\nweather\n\nphiladelphia\n\nspring-break\n\n\n\nA data story about whether Philadelphia spring break weather is actually good enough to stay for.\n\n\n\n\n\nFeb 6, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nAlex’s Test\n\n\n\nLLMs\n\nLearning\n\n\n\nTesting Blogging\n\n\n\n\n\nFeb 1, 2025\n\n\nAlex\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/000_test_post/index.html",
-    "href": "posts/000_test_post/index.html",
-    "title": "A test post",
-    "section": "",
-    "text": "import matplotlib.pyplot as plt"
-  },
-  {
-    "objectID": "posts/000_test_post/index.html#stories-from-data",
-    "href": "posts/000_test_post/index.html#stories-from-data",
-    "title": "A test post",
-    "section": "Stories from data",
-    "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
-  },
-  {
-    "objectID": "posts/001_blog/medical_knowledge.ipynb.html",
-    "href": "posts/001_blog/medical_knowledge.ipynb.html",
-    "title": "Alex’s Test",
-    "section": "",
-    "text": "Test post 🎉\nThis is a test blog post to confirm that my GitHub Pages site is correctly building and rendering content exported from a Jupyter notebook.\nWhat I’m testing\nFront matter is being read correctly (title/date/categories)\nMarkdown renders (headers, lists, bold text)\nAn image loads from my repo\n\n\n\nPhiladelphia skyline test image"
-  },
-  {
-    "objectID": "posts/004_blog/Untitled.html",
-    "href": "posts/004_blog/Untitled.html",
-    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
-    "section": "",
-    "text": "Winter Olympics image"
-  },
-  {
-    "objectID": "posts/004_blog/Untitled.html#total-medals-tell-one-story",
-    "href": "posts/004_blog/Untitled.html#total-medals-tell-one-story",
-    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
-    "section": "Total Medals Tell One Story",
-    "text": "Total Medals Tell One Story\nIf you just count medals, countries like the United States, Canada, Germany, and Norway rise to the top. That makes sense. These countries have large sports systems, long Olympic histories, and lots of resources.\nAt first, it looks like the story is simple: the biggest and strongest countries win the most.\n\n# use 2023 population as the closest recent comparison\npop_2023 = pop[[\"Country Code\", \"2023\"]].copy()\npop_2023.columns = [\"noc\", \"population\"]\n\ncountry_map = {\n    \"USA\": \"USA\",\n    \"CAN\": \"CAN\",\n    \"NOR\": \"NOR\",\n    \"SWE\": \"SWE\",\n    \"FIN\": \"FIN\",\n    \"GER\": \"DEU\",\n    \"FRA\": \"FRA\",\n    \"ITA\": \"ITA\",\n    \"SUI\": \"CHE\",\n    \"AUT\": \"AUT\",\n    \"NED\": \"NLD\"\n}\n\nmedal_df = medal_counts.reset_index()\nmedal_df.columns = [\"noc\", \"medals\"]\nmedal_df[\"pop_code\"] = medal_df[\"noc\"].map(country_map)\n\nmerged = medal_df.merge(pop_2023, left_on=\"pop_code\", right_on=\"noc\", how=\"left\", suffixes=(\"_medal\", \"_pop\"))\nmerged[\"medals_per_million\"] = merged[\"medals\"] / (merged[\"population\"] / 1_000_000)\n\nper_million = merged.dropna(subset=[\"medals_per_million\"]).sort_values(\"medals_per_million\", ascending=False).head(10)\n\nplt.figure(figsize=(10,5))\nplt.bar(per_million[\"noc_medal\"], per_million[\"medals_per_million\"])\nplt.title(\"Top Countries by Winter Olympic Medals Per Million People\")\nplt.ylabel(\"Medals Per Million People\")\nplt.xlabel(\"Country Code\")\nplt.tight_layout()\nplt.show()"
-  },
-  {
-    "objectID": "posts/004_blog/Untitled.html#population-changes-the-story",
-    "href": "posts/004_blog/Untitled.html#population-changes-the-story",
-    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
-    "section": "Population Changes the Story",
-    "text": "Population Changes the Story\nOnce population is added, the ranking changes a lot.\nBig countries still do well, but smaller countries start to look much more impressive. A country with a small population that wins a lot of medals is doing something special.\nThis is where countries like Norway, Finland, and Sweden really stand out. They may not always have the biggest populations, but they consistently produce amazing results in winter sports.\n\nfocus = merged[merged[\"noc_medal\"].isin([\"USA\", \"CAN\", \"NOR\", \"SWE\", \"FIN\"])].copy()\nfocus = focus.sort_values(\"medals_per_million\", ascending=False)\n\nplt.figure(figsize=(10,5))\nplt.bar(focus[\"noc_medal\"], focus[\"medals_per_million\"])\nplt.title(\"Winter Olympic Medals Per Million: USA vs Canada vs Nordic Countries\")\nplt.ylabel(\"Medals Per Million People\")\nplt.xlabel(\"Country Code\")\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\nbios = pd.read_csv(\"bios.csv\")\n\nathletes_by_country = bios[\"NOC\"].value_counts().head(10)\n\nplt.figure(figsize=(10,5))\nathletes_by_country.plot(kind=\"bar\")\nplt.title(\"Countries With the Most Athletes in the Bio Dataset\")\nplt.ylabel(\"Number of Athletes\")\nplt.xlabel(\"Country\")\nplt.tight_layout()\nplt.show()"
-  },
-  {
-    "objectID": "posts/004_blog/Untitled.html#athletes-matter-too",
-    "href": "posts/004_blog/Untitled.html#athletes-matter-too",
-    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
-    "section": "Athletes Matter Too",
-    "text": "Athletes Matter Too\nAnother way to think about this is by looking at how many athletes come from each country. Bigger countries often send more athletes, which gives them more chances to win medals.\nBut even then, some countries still perform above expectations. That makes the story more interesting. It is not just about sending the most people. It is about building a system where winter sports are part of national identity."
-  },
-  {
-    "objectID": "posts/004_blog/Untitled.html#conclusion",
-    "href": "posts/004_blog/Untitled.html#conclusion",
-    "title": "Why Do Tiny Cold Countries Win So Many Winter Olympic Medals?",
-    "section": "Conclusion",
-    "text": "Conclusion\nAt first, Winter Olympic success looks like a story about powerful countries winning the most medals. But once population is added, the story becomes much more interesting.\nThe countries that really stand out are not always the biggest ones. Smaller, colder countries often do the most with the least. Norway is the clearest example of this.\nSo the next time I watch the Winter Olympics, I probably will not be most impressed by whichever country wins the most medals overall. I will be paying more attention to which countries do the most with the fewest people."
   }
 ]
