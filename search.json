@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "My Data Stories",
     "section": "",
-    "text": "Fewer Crashes, Deadlier Streets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Do Tiny Cold Countries Win So Many Winter Olympic Medals?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMost Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.\n\n\n\nbikes\n\nsafety\n\ndata\n\n\n\nA data story about bicycle crashes in the Chapel Hill region and the difference between where crashes happen most often and where they become most serious.\n\n\n\n\n\nMar 22, 2026\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nWhat Our Personalities Say About Us\n\n\n\npersonality\n\ndata\n\npsychology\n\n\n\nA data story about personality surveys, essays, social media posts, and what they suggest about human behavior.\n\n\n\n\n\nFeb 13, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nSpring Break in Philly: Worth Staying or Not?\n\n\n\nweather\n\nphiladelphia\n\nspring-break\n\n\n\nA data story about whether Philadelphia spring break weather is actually good enough to stay for.\n\n\n\n\n\nFeb 6, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nAlex’s Test\n\n\n\nLLMs\n\nLearning\n\n\n\nTesting Blogging\n\n\n\n\n\nFeb 1, 2025\n\n\nAlex\n\n\n\n\n\nNo matching items"
+    "text": "Fewer Crashes, Deadlier Streets\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhy Do Tiny Cold Countries Win So Many Winter Olympic Medals?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMost Bike Crashes Happen in Broad Daylight. The Worst Ones Don’t.\n\n\n\nbikes\n\nsafety\n\ndata\n\n\n\nA data story about bicycle crashes in the Chapel Hill region and the difference between where crashes happen most often and where they become most serious.\n\n\n\n\n\nMar 22, 2026\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nWhat Our Personalities Say About Us\n\n\n\npersonality\n\ndata\n\npsychology\n\n\n\nA data story about personality surveys, essays, social media posts, and what they suggest about human behavior.\n\n\n\n\n\nFeb 13, 2025\n\n\nAlex\n\n\n\n\n\n\n\n\n\n\n\n\nSpring Break in Philly: Worth Staying or Not?\n\n\n\nweather\n\nphiladelphia\n\nspring-break\n\n\n\nA data story about whether Philadelphia spring break weather is actually good enough to stay for.\n\n\n\n\n\nFeb 6, 2025\n\n\nAlex\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/003_blog/Untitled.html",
@@ -47,13 +47,6 @@
     "title": "What Our Personalities Say About Us",
     "section": "",
     "text": "Looking across these datasets, one thing becomes clear: personality is complicated.\nNo single test captures everything about a person. But when you look at personality from multiple angles — surveys, essays, and social media — interesting patterns start to appear.\nThe data suggests that personality influences how people think, how they write, and even how they communicate online.\nAt the same time, most people are not extremely different from each other. Instead, personality tends to exist on a spectrum where people share many traits but express them in slightly different ways.\nIn the end, personality tests might not perfectly define who we are, but they can still reveal some surprising insights about human behavior.\n\n\n\nPersonality Data Visualization"
-  },
-  {
-    "objectID": "posts/001_blog/medical_knowledge.ipynb.html",
-    "href": "posts/001_blog/medical_knowledge.ipynb.html",
-    "title": "Alex’s Test",
-    "section": "",
-    "text": "Test post 🎉\nThis is a test blog post to confirm that my GitHub Pages site is correctly building and rendering content exported from a Jupyter notebook.\nWhat I’m testing\nFront matter is being read correctly (title/date/categories)\nMarkdown renders (headers, lists, bold text)\nAn image loads from my repo\n\n\n\nPhiladelphia skyline test image"
   },
   {
     "objectID": "posts/005_blog/Untitled.html",
