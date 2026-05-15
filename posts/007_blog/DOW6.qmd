@@ -1,0 +1,178 @@
+---
+title: "Palantir vs Anduril: What Five Years of Search Data Says About the Defense Tech Wave"
+author: "Alex Rosen"
+date: "2026-05-15"
+categories: [DOW, Defense Tech, Google Trends]
+---
+
+# Palantir vs Anduril: What Five Years of Search Data Says About the Defense Tech Wave
+
+Five years ago, saying "defense tech" at a Sand Hill dinner was a conversation killer. Today it's one of the most crowded categories in venture. The interesting question is whether the public actually noticed, or whether this is still mostly an inside-baseball story for founders, LPs, and a handful of journalists.
+
+The two cleanest proxies are Palantir and Anduril. Palantir is the public-market face of the category. Anduril is the private one. Both built their pitch around the same idea: Silicon Valley walked away from the Pentagon and someone needed to come back. Search interest gives us a way to test whether that pitch landed with anyone outside the bubble.
+
+I pulled five years of weekly Google Trends data for both companies, plus PLTR's daily stock price, to see how attention, real-world events, and market value actually moved together. The data is from [Google Trends](https://trends.google.com) and a Yahoo Finance export.
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import warnings
+warnings.filterwarnings('ignore')
+
+plt.rcParams['figure.dpi'] = 110
+plt.rcParams['axes.spines.top'] = False
+plt.rcParams['axes.spines.right'] = False
+plt.rcParams['font.family'] = 'DejaVu Sans'
+```
+
+```{python}
+trends = pd.read_csv(
+    'palantir_anduril_trends.csv',
+    skiprows=2,
+    index_col=0,
+    parse_dates=True,
+)
+trends.columns = ['Palantir', 'Anduril']
+trends.tail()
+```
+
+## The two companies, side by side
+
+```{python}
+fig, ax = plt.subplots(figsize=(13, 5))
+
+ax.fill_between(trends.index, trends['Palantir'], alpha=0.12, color='#1f4e79')
+ax.plot(trends.index, trends['Palantir'], color='#1f4e79', linewidth=1.8, label='Palantir')
+ax.plot(trends.index, trends['Anduril'], color='#c75b12', linewidth=1.8, label='Anduril')
+
+events = [
+    ('2022-02-24', 'Russia invades\nUkraine',          96),
+    ('2023-10-07', 'Oct 7 attacks',                    96),
+    ('2024-02-05', 'Palantir AIPCon /\nAI re-rating',  78),
+    ('2024-08-08', 'Anduril Series F\n($14B)',         96),
+]
+for date_str, label, y in events:
+    d = pd.Timestamp(date_str)
+    ax.axvline(d, color='gray', linewidth=0.8, linestyle='--', alpha=0.6)
+    ax.text(d, y, label, fontsize=8, ha='center', va='top',
+            bbox=dict(boxstyle='round,pad=0.25', facecolor='white',
+                      alpha=0.85, edgecolor='none'))
+
+ax.set_ylabel('Search interest (0 to 100)', fontsize=10)
+ax.set_xlabel('Date', fontsize=10)
+ax.set_title('Worldwide Google Search Interest, 2021 to 2026',
+             fontsize=13, fontweight='bold', pad=14)
+ax.legend(loc='upper left', fontsize=10)
+ax.set_ylim(0, 108)
+plt.tight_layout()
+plt.show()
+```
+
+A few things jump out.
+
+Palantir trades in a tight, boring band for most of its post-IPO life. Then late 2023 the line goes near-vertical and basically never comes back down. The climb continues through 2024 and 2025, and it tracks the AI narrative far more than any specific battlefield event. If you'd told me in 2022 that Palantir would peg search interest at 100 by 2025, I would have asked what war you were assuming. The actual answer turned out to be AIP and Karp media appearances.
+
+Anduril is a much quieter line. It barely registers in 2021 and 2022. It ticks up as the company starts winning real contracts (IVAS, Roadrunner, CCA) and announcing bigger rounds, but even at peak it operates at roughly a fifth of Palantir's high. That gap is the story of the category in one image: even within "defense tech," public attention concentrates massively. One name does almost all of the cultural work.
+
+## Did the wars actually move search interest?
+
+You'd assume invasions and attacks would spike public interest in companies that sell to militaries. The data is less generous than I expected.
+
+```{python}
+def window_avg(series, event_date, weeks_before=8, weeks_after=8):
+    rd = pd.Timestamp(event_date)
+    pre = series.loc[rd - pd.Timedelta(weeks=weeks_before):rd].mean()
+    post = series.loc[rd:rd + pd.Timedelta(weeks=weeks_after)].mean()
+    return round(pre, 1), round(post, 1), round(post - pre, 1)
+
+event_dates = {
+    'Russia invades Ukraine (Feb 2022)':      '2022-02-24',
+    'Oct 7 attacks (Oct 2023)':               '2023-10-07',
+    'Palantir AIPCon era (Feb 2024)':         '2024-02-05',
+    'Anduril Series F (Aug 2024)':            '2024-08-08',
+}
+
+rows = []
+for label, date in event_dates.items():
+    for company in ['Palantir', 'Anduril']:
+        pre, post, lift = window_avg(trends[company], date)
+        rows.append({
+            'Event': label, 'Company': company,
+            'Pre 8w avg': pre, 'Post 8w avg': post, 'Lift': lift,
+        })
+
+pd.DataFrame(rows)
+```
+
+A couple of useful observations.
+
+The Russian invasion produced a small bump in Palantir but barely registered for Anduril. The Oct 7 attacks did basically nothing to either line, which surprised me. Both observations cut against the lazy thesis that geopolitical shocks are what's driving the defense tech bull case. The category is real, but the public is not following along by reading military news and then Googling Palantir.
+
+The events that produced real, sustained lifts were the Palantir AI re-rating in early 2024 and the Anduril Series F announcement that summer. Those are commercial and narrative events, not geopolitical ones. That matters for how you pitch this category. The public is not buying "defense" as a thesis. They are buying "AI applied to defense," which is a different story with a different investor base.
+
+## Search vs stock price
+
+```{python}
+stock = pd.read_csv('pltr_stock.csv', index_col=0, parse_dates=True)
+stock.head()
+```
+
+```{python}
+# Resample weekly search to daily, then align with daily stock prices
+pltr_search_daily = trends['Palantir'].resample('D').interpolate()
+
+combined = pd.DataFrame({
+    'Search': pltr_search_daily,
+    'Price': stock['Close'],
+}).dropna()
+
+fig, ax1 = plt.subplots(figsize=(13, 5))
+
+color_search = '#1f4e79'
+color_price = '#2e8b57'
+
+ax1.plot(combined.index, combined['Search'], color=color_search,
+         linewidth=2.0, label='Palantir search interest')
+ax1.set_ylabel('Search interest (0 to 100)', fontsize=10, color=color_search)
+ax1.tick_params(axis='y', labelcolor=color_search)
+ax1.set_xlabel('Date', fontsize=10)
+ax1.set_ylim(0, 110)
+
+ax2 = ax1.twinx()
+ax2.spines['top'].set_visible(False)
+ax2.plot(combined.index, combined['Price'], color=color_price,
+         linewidth=2.0, label='PLTR close price')
+ax2.set_ylabel('PLTR price (USD)', fontsize=10, color=color_price)
+ax2.tick_params(axis='y', labelcolor=color_price)
+
+ax1.set_title('Palantir: Search Interest vs PLTR Stock Price',
+              fontsize=13, fontweight='bold', pad=14)
+
+lines1, labels1 = ax1.get_legend_handles_labels()
+lines2, labels2 = ax2.get_legend_handles_labels()
+ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left', fontsize=10)
+
+plt.tight_layout()
+plt.show()
+```
+
+```{python}
+combined.corr().round(3)
+```
+
+Two lines, same shape. Search and price both drift sideways through 2022, bottom out in late 2022, then climb together from late 2023 onward. The Pearson correlation across the full window comes out around 0.95, and visually the dance is even tighter than that from early 2024 on. The obvious caveat: this is one stock, one search term, and the correlation is mostly being carried by the 2024 and 2025 rally that dominates both series.
+
+The chicken-and-egg question is the obvious one. I would not assume retail searches are moving the stock or vice versa. The simpler read is that one underlying thing (Palantir becoming a credible AI story) is driving both lines at the same time. Search interest is downstream of the same narrative shift that is repricing the equity.
+
+For founders building in this space, the practical takeaway is that becoming the public face of a category is worth a lot in valuation. Anduril's contract wins are arguably more impressive on a per-dollar basis, but the multiple that gets attached to "the AI defense company" lives with the name people actually search for.
+
+## What this means
+
+Two things stand out from five years of data.
+
+First, defense tech as a public story is almost entirely a Palantir story right now. Anduril is winning where it matters in the real world (contracts, valuation, talent), but it has not broken into mainstream search the way Palantir has. That is a real gap for any founder pitching the category to LPs or generalist investors who care about brand-level pull. Founders in adjacent spots (autonomy, space, cyber) should assume the public will not find them on their own.
+
+Second, the events that should have driven defense tech search interest mostly didn't. Wars, attacks, and supplemental aid packages produced small, short-lived bumps. The thing that actually drove the line was AI. That is encouraging if you think the category is now riding two tailwinds at once. It is also worth watching, because a wave that lifts you can also fall, and "AI applied to X" is a more crowded pitch than "defense" alone.
+
+Defense tech is real. The public sees one company. Most of the alpha for founders is still on the other side of that gap.
